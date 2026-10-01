@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ApprovedManifest",
+  "type": "object",
+  "required": ["batch_id","skill_version","adapter","cards","platform","visual_spec","connector_token"],
+  "properties": {
+    "batch_id": {"type": "string"},
+    "skill_version": {"type": "string"},
+    "adapter": {"type": "string"},
+    "visual_spec": {"type": "string"},
+    "connector_token": {"type": "string"},
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["card_id","status","filename"],
+        "properties": {
+          "card_id": {"type": "string"},
+          "status": {"const": "APPROVED"},
+          "filename": {"type": "string"},
+          "sha256": {"type": ["string","null"]},
+          "source_ids": {"type": "array","items": {"type": "string"}},
+          "qa_report": {"type": ["string","null"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "platform": {"type": "string","minLength": 1},
+    "contract_version": {"type": ["string","null"]}
+  },
+  "additionalProperties": true
+}

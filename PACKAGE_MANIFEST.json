@@ -1,0 +1,262 @@
+{
+  "package": "primary-school-english-scene-flashcards",
+  "version": "2.2.2",
+  "manifest_excludes_self": true,
+  "required_dirs": [
+    "core",
+    "engine",
+    "schemas",
+    "adapters",
+    "assets",
+    "tools"
+  ],
+  "file_count_excluding_manifest": 49,
+  "files": [
+    {
+      "path": "ADAPTER_CONFORMANCE_CHECKLIST.md",
+      "bytes": 1668,
+      "sha256": "acde01b4d14ff971a23c22415a08b855236f10d4df63247f6845b1b51dd52e4e"
+    },
+    {
+      "path": "ADAPTER_ROUTING.md",
+      "bytes": 1938,
+      "sha256": "41c14c1808e155995d3416c0c031c46908873c6293eeb63b4a56ff7659bf2c47"
+    },
+    {
+      "path": "AGENT_CONTRACT.md",
+      "bytes": 5933,
+      "sha256": "e91e41235c6e4c57fe4a5e3c600bf6ca7708eaf3ca423ba484a5f2a67b842f5a"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1824,
+      "sha256": "e0f7ab6ebc34d77d96c43511b085e91afe31b9f4c889d2b8a98f0b84f48990ec"
+    },
+    {
+      "path": "INSTALLATION.md",
+      "bytes": 662,
+      "sha256": "f1f088e30ca87abf5376f6e57f50cf72d305df5eee11c42ff1c81e875e98ef52"
+    },
+    {
+      "path": "MIGRATION_V1_TO_V2.md",
+      "bytes": 1337,
+      "sha256": "220b2ab2d4224452db60463af0b005905163cdf2bc26ae446da4e5921d343d0d"
+    },
+    {
+      "path": "MIGRATION_V2.1_TO_V2.2.md",
+      "bytes": 1062,
+      "sha256": "20b1713ad87fa038b63e390a4964512473b1ee9a89fd1c2c0f7f6fcd34451d67"
+    },
+    {
+      "path": "PORTABILITY_AUDIT.md",
+      "bytes": 914,
+      "sha256": "3fcbe39507220889b638fbe14437d57e69948c2c862da504f6d8ffc90b8116fb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2939,
+      "sha256": "9dba10d26edeb24f3e86fabc7204a79214759d7cd158f77b2f6d56f66033977d"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 3146,
+      "sha256": "e3e5a86b8eacb02e09b950e937304d2801c9d6f298c7cb41b1f77b040c223178"
+    },
+    {
+      "path": "adapters/doubao_work/ADAPTER.md",
+      "bytes": 8669,
+      "sha256": "c04ff56823266de41be04efe6d67d8ce24cc7ded0e76685ecfb888d8cb1a55b2"
+    },
+    {
+      "path": "adapters/doubao_work/OBSERVED_FAILURE_AUDIT.md",
+      "bytes": 2507,
+      "sha256": "51f8b7883839a8297e9be5a774bebc5cbac88cb27853106481c2153feebd5298"
+    },
+    {
+      "path": "adapters/generic/ADAPTER_TEMPLATE.md",
+      "bytes": 732,
+      "sha256": "790e127d2e245d3d69c9c9e60ba68605ecb7e8914163b08913b8fc48e63dbe79"
+    },
+    {
+      "path": "adapters/openai/ADAPTER.md",
+      "bytes": 983,
+      "sha256": "bc37d6e104f2a9f20c36872d149c0b006d6062de03500add622267efc4ca23ed"
+    },
+    {
+      "path": "adapters/qwen_office/ADAPTER.md",
+      "bytes": 14748,
+      "sha256": "ded20f700fc20a88f32a86c698dd1501d4ad44dbd1c14f5741015e2b0ca47520"
+    },
+    {
+      "path": "adapters/qwen_office/OBSERVED_FAILURE_AUDIT.md",
+      "bytes": 5479,
+      "sha256": "4cb7f2ffee45a4e077de071b106100a46b28f7cb7e1ee93ef9ddd8fdeba0f9bc"
+    },
+    {
+      "path": "assets/golden_set/G3A-U01-C01-approved.png",
+      "bytes": 120371,
+      "sha256": "16f04154283f1da6e9065e1df90e5387d1bea18648848b62f640de8976f3146e"
+    },
+    {
+      "path": "assets/golden_set/README.md",
+      "bytes": 552,
+      "sha256": "ba988b1effcb615a2889646bb3939920e936b7048a05e08e6cec9a985405ff47"
+    },
+    {
+      "path": "assets/style_references/connector-light-01.png",
+      "bytes": 130463,
+      "sha256": "93af98f1f2ca3f940e75219379de94673753bf192621b523ca3d93d34e03eff1"
+    },
+    {
+      "path": "assets/style_references/connector-light-02.png",
+      "bytes": 120471,
+      "sha256": "22bc47bdb996d0efed670b2c48dec56da2256ad95859190e8ab42d08735436ff"
+    },
+    {
+      "path": "core/connector_system_v3.md",
+      "bytes": 1021,
+      "sha256": "14a9435329f2022dbd965397463cc68fc573617fecf2a4a52c5167f8992b0af8"
+    },
+    {
+      "path": "core/design_tokens.json",
+      "bytes": 1414,
+      "sha256": "de990f4790f5e82ee1d6f7cf35ca2b1e504a6961e94b9f316cc3378672e04638"
+    },
+    {
+      "path": "core/grouping_rules.md",
+      "bytes": 1633,
+      "sha256": "69a8311c1239ced99b0d61b3861aae70b40a9bad0134df72a59d7ee6abcc13e4"
+    },
+    {
+      "path": "core/qa_rules.md",
+      "bytes": 1603,
+      "sha256": "60b9eaf2a1ae304bcbbbbd17dd85d1d2ba9539b8cd73cec7c5ff4e54f250675d"
+    },
+    {
+      "path": "core/scene_brief_rules.md",
+      "bytes": 1204,
+      "sha256": "cdaf9f0bca506b4295e7e70117797801eef5acefb2f7415dca89b9eb4ff9c1e8"
+    },
+    {
+      "path": "core/source_truth.md",
+      "bytes": 1045,
+      "sha256": "eea1b7ddc2d26a678d9b60d23e655c5ddf7ec0c86f6c271e0eef1aecd3303b05"
+    },
+    {
+      "path": "core/visual_spec.md",
+      "bytes": 1028,
+      "sha256": "7cad1534c087107b6eef3025592f383a635b69f57214db98306312ab34998935"
+    },
+    {
+      "path": "core/workflow.md",
+      "bytes": 2965,
+      "sha256": "3e6c862253dcd029da40ef50a20d62f9603863f80c04844b3ab1114c3af44b17"
+    },
+    {
+      "path": "engine/README.md",
+      "bytes": 560,
+      "sha256": "047e5ac90adaeedfac092e297f320e4861091b8cbf8474d0af2a6da8dcf3a27c"
+    },
+    {
+      "path": "engine/artifact_store_contract.md",
+      "bytes": 487,
+      "sha256": "b8f6a11e580b89af5178bacf8e6a2b38530d86d562bb8703e9670eeaf2c11c0f"
+    },
+    {
+      "path": "engine/composer_contract.md",
+      "bytes": 835,
+      "sha256": "628d76168aa974321c530df4f4059a69537d23f6c04224944a2fde28fbc6998f"
+    },
+    {
+      "path": "engine/prompt_compiler_contract.md",
+      "bytes": 579,
+      "sha256": "5e13985c1f103286c36f26f6c7d31c3b2a00ad35e8d591bdcd7b726f59543876"
+    },
+    {
+      "path": "engine/qa_engine_contract.md",
+      "bytes": 468,
+      "sha256": "5e83a2f825d32d00cf84b45a3b88ad1383f10c9d7d2d767f82f6922bf341d335"
+    },
+    {
+      "path": "engine/state_machine.md",
+      "bytes": 737,
+      "sha256": "b6803da8190f004f561e6103df3da5ed65813a1dda9adcfe831d19baa0af5761"
+    },
+    {
+      "path": "examples/minimal_run/card_plan.json",
+      "bytes": 207,
+      "sha256": "15e48c6133c41fa1743ea7e9157eb887b78efdc8bdc464ad02ce868be60c60b5"
+    },
+    {
+      "path": "examples/minimal_run/vocabulary_master.json",
+      "bytes": 270,
+      "sha256": "db391ba3bef70d698c85aaf13884f90c253548f690f58dae662a336d1f75a1dd"
+    },
+    {
+      "path": "schemas/base_asset.schema.json",
+      "bytes": 774,
+      "sha256": "7c3a00b67995df47a92aa6afec51d54925f9cbab3480ee754364b9e56113947f"
+    },
+    {
+      "path": "schemas/card_plan.schema.json",
+      "bytes": 979,
+      "sha256": "a54219970e2fdf4c098d8dac35d97a313a8077ea99d79c336c81958a7f62abbb"
+    },
+    {
+      "path": "schemas/card_plan_set.schema.json",
+      "bytes": 155,
+      "sha256": "67a96a379ee09057fde2d612053b5a9c401d4700d4271ef5224ff002e9ff556e"
+    },
+    {
+      "path": "schemas/compiled_prompt.schema.json",
+      "bytes": 720,
+      "sha256": "2a504d83b54bd9f1e92dbb4bdd6e3b4fd56695a47125c93088d24b709404dfb7"
+    },
+    {
+      "path": "schemas/layout_spec.schema.json",
+      "bytes": 3289,
+      "sha256": "de93aafe6a5e766da5665ebe2c1f9aa904ecb44ce6b252d4148986d81db355cd"
+    },
+    {
+      "path": "schemas/manifest.schema.json",
+      "bytes": 1557,
+      "sha256": "b7dd70dcd105da21749d817a6af3da24c6fe44ac758696e32f960298fc092cf9"
+    },
+    {
+      "path": "schemas/qa_report.schema.json",
+      "bytes": 904,
+      "sha256": "e714dd0adb4b2cd61c526c11429120300ad8bbcd2ad886acc4b05673f5207f62"
+    },
+    {
+      "path": "schemas/repair_action.schema.json",
+      "bytes": 749,
+      "sha256": "7d73c62900294db39bc6b09a967385c5fda5ed9dac0e29ef2a3c9ed755257845"
+    },
+    {
+      "path": "schemas/run_state.schema.json",
+      "bytes": 1145,
+      "sha256": "83cb5b72c74cf3403b80f9555e43e049d4d702374586478dcef25e1b0e7c7463"
+    },
+    {
+      "path": "schemas/scene_brief.schema.json",
+      "bytes": 2367,
+      "sha256": "9b3992e887b9a4a561407e64fcf50cf77b739fee424f4673c9b7d5af713e6fab"
+    },
+    {
+      "path": "schemas/vocabulary.schema.json",
+      "bytes": 1099,
+      "sha256": "9400ece23b21fefd933f6f3c7a58c7229d5d2361278c948865603da5f375e8d9"
+    },
+    {
+      "path": "schemas/vocabulary_master.schema.json",
+      "bytes": 161,
+      "sha256": "523d3697a05eee0754f6c5eb9b53004d8cd2eecc30ae6b2a2c55b6209349b2f0"
+    },
+    {
+      "path": "tools/validate_package.py",
+      "bytes": 6044,
+      "sha256": "7d6c6992167f2e32d5afa23698733f5314b1a9512bcbd4146c212e4841df80b8"
+    }
+  ],
+  "distribution_note": "GitHub repository distribution: reference PNGs are downscaled to max 320px for lightweight repository use; filenames and semantic reference roles are unchanged."
+}
