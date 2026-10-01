@@ -8,9 +8,9 @@
 
 ### G3A-U01-C01 — Approved reference
 
-![G3A-U01-C01](grade3/G3A-U01-C01-approved.jpg)
+![G3A-U01-C01](../assets/golden_set/G3A-U01-C01-approved.png)
 
-用途：展示场景词汇、白色圆角标签、英文/IPA/中文三级信息，以及 `connector.v3.light` 的整体视觉方向。
+用途：直接引用仓库中的正式 Golden Sample，展示场景词汇、白色圆角标签、英文/IPA/中文三级信息，以及 `connector.v3.light` 的整体视觉方向。
 
 ## 四年级上册
 
@@ -33,4 +33,4 @@
 - 做 QA：可以用历史图对照当前规范，识别长连线、标签过小、抽象词硬映射等旧问题。
 - 做新年级：不要复制这些图里的旧缺陷，仍以 `SKILL.md`、`core/` 和当前平台 Adapter 为准。
 
-仓库中的演示图使用轻量预览尺寸，以避免 Git 仓库膨胀；正式生产文件应由各批次 Artifact Store 独立保存。
+仓库中的四年级演示图使用轻量预览尺寸，以避免 Git 仓库膨胀；正式生产文件应由各批次 Artifact Store 独立保存。
