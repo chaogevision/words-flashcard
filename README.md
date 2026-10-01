@@ -42,10 +42,16 @@ Agent 只需要提供以下能力中的对应实现：
 - Connector: `connector.v3.light`
 - Contract: `Agent Contract 1.0`
 
+## Demo Gallery｜成品演示
+
+仓库提供三年级上册和四年级上册的历史成品演示：
+
+- [查看 Demo Gallery](demo/README.md)
+
+`demo/` 仅用于快速查看成品效果和场景案例，不替代 `assets/golden_set/`。正式生产仍以当前 `SKILL.md`、`core/`、当前平台 Adapter 和 QA 规则为准。
 
 ## Platform adapters
 This package includes adapter-specific execution guidance. For Doubao Work, read `adapters/doubao_work/ADAPTER.md` before production; it adds larger label sizing, connector-length ceilings, stricter semantic-anchor QA, and text-contamination/style-drift guards based on observed outputs.
-
 
 ## Adapter routing in V2.2
 Platform-specific corrections are isolated by adapter:
@@ -56,7 +62,6 @@ Platform-specific corrections are isolated by adapter:
 Run-time rule order is `Agent Contract -> Core -> Active Adapter -> Task`. See `ADAPTER_ROUTING.md`.
 
 The Qwen Office adapter was added after auditing a real generated batch. It focuses on card-type routing, abstract/function-word handling, connector shortening, semantic endpoint accuracy, context-label proximity, object differentiation, cutaway layouts, and Qwen-specific QA gates.
-
 
 ## Package completeness
 V2.2.2 includes the previously implicit execution dependencies as explicit package artifacts:
