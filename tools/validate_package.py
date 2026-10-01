@@ -55,6 +55,8 @@ if args.strict:
 # Manifest inventory integrity.
 # Source ZIP packages can enforce bytes/SHA256. GitHub repository distributions rely on Git object
 # integrity because reference assets may be intentionally recompressed for repository portability.
+# The top-level demo/ gallery is repository-only presentation content and intentionally sits outside
+# the distributable Skill package manifest.
 mp = root / 'PACKAGE_MANIFEST.json'
 if mp.is_file():
     try:
@@ -63,7 +65,9 @@ if mp.is_file():
         actual = {
             str(p.relative_to(root)).replace('\\', '/')
             for p in root.rglob('*')
-            if p.is_file() and p.name != 'PACKAGE_MANIFEST.json'
+            if p.is_file()
+            and p.name != 'PACKAGE_MANIFEST.json'
+            and not str(p.relative_to(root)).replace('\\', '/').startswith('demo/')
         }
         if set(listed) != actual:
             for x in sorted(actual - set(listed)):
