@@ -16,8 +16,8 @@
 
 <table>
 <tr>
-<td width="50%"><img src="demo/grade3/G3A-C01-pets.png" alt="三年级 宠物场景闪卡"></td>
-<td width="50%"><img src="demo/grade3/G3A-C02-school-garden.png" alt="三年级 校园花园场景闪卡"></td>
+<td width="50%"><img src="demo/grade3/G3A-C01-pets.jpg" alt="三年级 宠物场景闪卡"></td>
+<td width="50%"><img src="demo/grade3/G3A-C02-school-garden.jpg" alt="三年级 校园花园场景闪卡"></td>
 </tr>
 <tr>
 <td align="center">Pets｜宠物</td>
@@ -29,8 +29,8 @@
 
 <table>
 <tr>
-<td width="50%"><img src="demo/grade5/G5A-C20-plant-parts.png" alt="五年级 植物结构场景闪卡"></td>
-<td width="50%"><img src="demo/grade5/G5A-C24-hiking-trip.png" alt="五年级 徒步旅行场景闪卡"></td>
+<td width="50%"><img src="demo/grade5/G5A-C20-plant-parts.jpg" alt="五年级 植物结构场景闪卡"></td>
+<td width="50%"><img src="demo/grade5/G5A-C24-hiking-trip.jpg" alt="五年级 徒步旅行场景闪卡"></td>
 </tr>
 <tr>
 <td align="center">Plant Parts｜植物结构</td>
