@@ -8,31 +8,31 @@
 
 ### 01 · Pets｜宠物
 
-![G3A Pets](grade3/G3A-C01-pets.jpg)
+![G3A Pets](grade3/G3A-C01-pets.png)
 
 `dog · like · pet · bird · cat · fish · rabbit`
 
 ### 02 · School Garden｜校园花园
 
-![G3A School Garden](grade3/G3A-C02-school-garden.jpg)
+![G3A School Garden](grade3/G3A-C02-school-garden.png)
 
 `school · tree · garden · flower · plant · grass`
 
 ### 03 · Family｜家庭成员
 
-![G3A Family](grade3/G3A-C03-family.jpg)
+![G3A Family](grade3/G3A-C03-family.png)
 
 `sister · brother · baby · cousin`
 
 ### 04 · Animals｜动物与特征
 
-![G3A Animals](grade3/G3A-C04-animals.jpg)
+![G3A Animals](grade3/G3A-C04-animals.png)
 
 `elephant · lion · tiger · giraffe · tall · fast`
 
 ### 05 · Family Gifts｜家庭人物与大小对比
 
-![G3A Family Gifts](grade3/G3A-C05-family-gifts.jpg)
+![G3A Family Gifts](grade3/G3A-C05-family-gifts.png)
 
 `uncle · aunt · have · big · small`
 
@@ -42,31 +42,31 @@
 
 ### 20 · Plant Parts｜植物结构与动作
 
-![G5A Plant Parts](grade5/G5A-C20-plant-parts.jpg)
+![G5A Plant Parts](grade5/G5A-C20-plant-parts.png)
 
 `stem · pull · seed · root`
 
 ### 21 · Lake & Lotus｜湖泊与莲属植物
 
-![G5A Lake Lotus](grade5/G5A-C21-lake-lotus.jpg)
+![G5A Lake Lotus](grade5/G5A-C21-lake-lotus.png)
 
 `interesting · lake · lotus · round`
 
 ### 22 · World｜世界与差异
 
-![G5A World](grade5/G5A-C22-world.jpg)
+![G5A World](grade5/G5A-C22-world.png)
 
 `different · way · world`
 
 ### 23 · Nature｜自然景观
 
-![G5A Nature](grade5/G5A-C23-nature.jpg)
+![G5A Nature](grade5/G5A-C23-nature.png)
 
 `famous · nature · mountain`
 
 ### 24 · Hiking Trip｜徒步旅行
 
-![G5A Hiking Trip](grade5/G5A-C24-hiking-trip.jpg)
+![G5A Hiking Trip](grade5/G5A-C24-hiking-trip.png)
 
 `before · hotel · go hiking · bring · trip`
 
