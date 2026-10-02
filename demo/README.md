@@ -1,36 +1,92 @@
-# Demo Gallery｜成品演示
+# Demo Gallery｜高清成品示例
 
-这里放的是已经完成过的三、四年级场景闪卡，用于快速展示这套 Skill 能产出什么样的结果。
+这里展示 Words Flashcard 已完成的场景闪卡成品。目标很简单：**先看效果，再决定要不要深入了解 Skill 的内部规则。**
 
-> 注意：`demo/` 是展示层，不属于 `assets/golden_set/`。Golden Set 只收录当前规范下正式批准、可作为生产基准的样张；历史演示图可能保留旧版连线、标签尺度或场景组织方式，因此不能替代 V2.2.2 的 Core / Adapter / QA 规范。
+> `demo/` 是面向用户的展示层；`assets/golden_set/` 是面向生产系统的严格基准层。Demo 中的卡片可以展示不同年级、不同卡型和场景设计，但是否进入 Golden Set 仍以当前版本 QA 为准。
 
-## 三年级上册
+## 三年级上册｜Grade 3
 
-### G3A-U01-C01 — Approved reference
+### 01 · Pets｜宠物
 
-![G3A-U01-C01](../assets/golden_set/G3A-U01-C01-approved.png)
+![G3A Pets](grade3/G3A-C01-pets.jpg)
 
-用途：直接引用仓库中的正式 Golden Sample，展示场景词汇、白色圆角标签、英文/IPA/中文三级信息，以及 `connector.v3.light` 的整体视觉方向。
+`dog · like · pet · bird · cat · fish · rabbit`
 
-## 四年级上册
+### 02 · School Garden｜校园花园
 
-### G4A-C05 — Family chores / 家务协作
+![G3A School Garden](grade3/G3A-C02-school-garden.jpg)
 
-![G4A-C05](grade4/G4A-C05-chores-family.jpg)
+`school · tree · garden · flower · plant · grass`
 
-用途：展示多人动作场景、动作词与家庭任务的组合。该图属于历史成品，适合用于演示与反例审计，不自动视为当前 Golden Sample。
+### 03 · Family｜家庭成员
 
-### G4A-C08 — Play / game / sports
+![G3A Family](grade3/G3A-C03-family.jpg)
 
-![G4A-C08](grade4/G4A-C08-play-game-sports.jpg)
+`sister · brother · baby · cousin`
 
-用途：展示户外运动类场景和多个可指认目标的布局方式。同样属于历史演示图，实际生产时应继续执行当前版本的连接线长度、标签尺寸和语义锚点 QA。
+### 04 · Animals｜动物与特征
 
-## 如何使用这些演示
+![G3A Animals](grade3/G3A-C04-animals.jpg)
 
-- 给人看效果：直接浏览本目录。
-- 给 Agent 学习风格：优先使用 `assets/golden_set/`，再把这里作为补充场景参考。
-- 做 QA：可以用历史图对照当前规范，识别长连线、标签过小、抽象词硬映射等旧问题。
-- 做新年级：不要复制这些图里的旧缺陷，仍以 `SKILL.md`、`core/` 和当前平台 Adapter 为准。
+`elephant · lion · tiger · giraffe · tall · fast`
 
-仓库中的四年级演示图使用轻量预览尺寸，以避免 Git 仓库膨胀；正式生产文件应由各批次 Artifact Store 独立保存。
+### 05 · Family Gifts｜家庭人物与大小对比
+
+![G3A Family Gifts](grade3/G3A-C05-family-gifts.jpg)
+
+`uncle · aunt · have · big · small`
+
+---
+
+## 五年级上册｜Grade 5
+
+### 20 · Plant Parts｜植物结构与动作
+
+![G5A Plant Parts](grade5/G5A-C20-plant-parts.jpg)
+
+`stem · pull · seed · root`
+
+### 21 · Lake & Lotus｜湖泊与莲属植物
+
+![G5A Lake Lotus](grade5/G5A-C21-lake-lotus.jpg)
+
+`interesting · lake · lotus · round`
+
+### 22 · World｜世界与差异
+
+![G5A World](grade5/G5A-C22-world.jpg)
+
+`different · way · world`
+
+### 23 · Nature｜自然景观
+
+![G5A Nature](grade5/G5A-C23-nature.jpg)
+
+`famous · nature · mountain`
+
+### 24 · Hiking Trip｜徒步旅行
+
+![G5A Hiking Trip](grade5/G5A-C24-hiking-trip.jpg)
+
+`before · hotel · go hiking · bring · trip`
+
+---
+
+## 这些 Demo 展示了什么？
+
+这 10 张卡覆盖了不同的视觉表达机制：
+
+- **Object / Place**：动物、学校、花园、湖泊、山脉等直接可指认目标；
+- **Action**：`pull`、`bring`、`go hiking` 等动作或任务；
+- **Relation / Comparison**：`big / small`、`different` 等需要关系或对比才能表达的词；
+- **Scene State / Context**：`interesting`、`famous`、`before` 等不能简单“拉一根线指物”的词。
+
+这也是 Skill 为什么需要先做 **Scene Grouping + Mapping Mode**，而不是把同一 Unit 的单词全部硬塞进一张图。
+
+## 关于图片
+
+本目录用于 GitHub 展示时，应保留足以查看文字、音标、中文和连接线细节的高清版本，而不是 320px 缩略图。仓库版 Demo 使用保留原始像素尺寸的 Web 优化 JPEG；正式印刷/生产母版仍建议由各批次 Artifact Store 保存原始 PNG。
+
+## 想自己生成？
+
+回到项目首页查看 [Quick Start](../README.md#快速开始)，或者直接从 [`SKILL.md`](../SKILL.md) 开始。
