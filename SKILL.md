@@ -6,6 +6,12 @@ contract_version: 1.0.0
 description: "Agent-independent production protocol for curriculum-faithful primary-school English scene flashcards."
 ---
 
+# License and Allowed Use
+
+This Skill's executable protocol, workflow rules, adapters and supporting tools are governed by the [PolyForm Noncommercial License 1.0.0](LICENSE). The repository's original demo artwork and presentation materials have a separate [CC BY-NC 4.0 content license](LICENSE-CONTENT.md), subject to ownership and third-party rights.
+
+Use of this Skill for commercial purposes requires compliance with the applicable license terms or separate written permission. **PolyForm includes an explicit allowance for certain organizations, including educational institutions; consult the full license before determining whether a particular use needs separate permission.** Output files do not automatically inherit the repository's content license.
+
 # Mission
 Convert a curriculum vocabulary source into a production-ready, visually consistent flashcard set while preserving exact curriculum facts.
 
