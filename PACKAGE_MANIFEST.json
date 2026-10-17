@@ -10,7 +10,7 @@
     "assets",
     "tools"
   ],
-  "file_count_excluding_manifest": 49,
+  "file_count_excluding_manifest": 51,
   "files": [
     {
       "path": "ADAPTER_CONFORMANCE_CHECKLIST.md",
@@ -21,46 +21,6 @@
       "path": "ADAPTER_ROUTING.md",
       "bytes": 1938,
       "sha256": "41c14c1808e155995d3416c0c031c46908873c6293eeb63b4a56ff7659bf2c47"
-    },
-    {
-      "path": "AGENT_CONTRACT.md",
-      "bytes": 5933,
-      "sha256": "e91e41235c6e4c57fe4a5e3c600bf6ca7708eaf3ca423ba484a5f2a67b842f5a"
-    },
-    {
-      "path": "CHANGELOG.md",
-      "bytes": 1824,
-      "sha256": "e0f7ab6ebc34d77d96c43511b085e91afe31b9f4c889d2b8a98f0b84f48990ec"
-    },
-    {
-      "path": "INSTALLATION.md",
-      "bytes": 662,
-      "sha256": "f1f088e30ca87abf5376f6e57f50cf72d305df5eee11c42ff1c81e875e98ef52"
-    },
-    {
-      "path": "MIGRATION_V1_TO_V2.md",
-      "bytes": 1337,
-      "sha256": "220b2ab2d4224452db60463af0b005905163cdf2bc26ae446da4e5921d343d0d"
-    },
-    {
-      "path": "MIGRATION_V2.1_TO_V2.2.md",
-      "bytes": 1062,
-      "sha256": "20b1713ad87fa038b63e390a4964512473b1ee9a89fd1c2c0f7f6fcd34451d67"
-    },
-    {
-      "path": "PORTABILITY_AUDIT.md",
-      "bytes": 914,
-      "sha256": "3fcbe39507220889b638fbe14437d57e69948c2c862da504f6d8ffc90b8116fb"
-    },
-    {
-      "path": "README.md",
-      "bytes": 2939,
-      "sha256": "9dba10d26edeb24f3e86fabc7204a79214759d7cd158f77b2f6d56f66033977d"
-    },
-    {
-      "path": "SKILL.md",
-      "bytes": 3146,
-      "sha256": "e3e5a86b8eacb02e09b950e937304d2801c9d6f298c7cb41b1f77b040c223178"
     },
     {
       "path": "adapters/doubao_work/ADAPTER.md",
@@ -93,6 +53,11 @@
       "sha256": "4cb7f2ffee45a4e077de071b106100a46b28f7cb7e1ee93ef9ddd8fdeba0f9bc"
     },
     {
+      "path": "AGENT_CONTRACT.md",
+      "bytes": 5933,
+      "sha256": "e91e41235c6e4c57fe4a5e3c600bf6ca7708eaf3ca423ba484a5f2a67b842f5a"
+    },
+    {
       "path": "assets/golden_set/G3A-U01-C01-approved.png",
       "bytes": 120371,
       "sha256": "16f04154283f1da6e9065e1df90e5387d1bea18648848b62f640de8976f3146e"
@@ -111,6 +76,11 @@
       "path": "assets/style_references/connector-light-02.png",
       "bytes": 120471,
       "sha256": "22bc47bdb996d0efed670b2c48dec56da2256ad95859190e8ab42d08735436ff"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1824,
+      "sha256": "e0f7ab6ebc34d77d96c43511b085e91afe31b9f4c889d2b8a98f0b84f48990ec"
     },
     {
       "path": "core/connector_system_v3.md",
@@ -153,11 +123,6 @@
       "sha256": "3e6c862253dcd029da40ef50a20d62f9603863f80c04844b3ab1114c3af44b17"
     },
     {
-      "path": "engine/README.md",
-      "bytes": 560,
-      "sha256": "047e5ac90adaeedfac092e297f320e4861091b8cbf8474d0af2a6da8dcf3a27c"
-    },
-    {
       "path": "engine/artifact_store_contract.md",
       "bytes": 487,
       "sha256": "b8f6a11e580b89af5178bacf8e6a2b38530d86d562bb8703e9670eeaf2c11c0f"
@@ -178,6 +143,11 @@
       "sha256": "5e83a2f825d32d00cf84b45a3b88ad1383f10c9d7d2d767f82f6922bf341d335"
     },
     {
+      "path": "engine/README.md",
+      "bytes": 560,
+      "sha256": "047e5ac90adaeedfac092e297f320e4861091b8cbf8474d0af2a6da8dcf3a27c"
+    },
+    {
       "path": "engine/state_machine.md",
       "bytes": 737,
       "sha256": "b6803da8190f004f561e6103df3da5ed65813a1dda9adcfe831d19baa0af5761"
@@ -193,19 +163,54 @@
       "sha256": "db391ba3bef70d698c85aaf13884f90c253548f690f58dae662a336d1f75a1dd"
     },
     {
+      "path": "INSTALLATION.md",
+      "bytes": 662,
+      "sha256": "f1f088e30ca87abf5376f6e57f50cf72d305df5eee11c42ff1c81e875e98ef52"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 4563,
+      "sha256": "c0ea4a896d2c8c394b29f9427589996db826cd501c512279ff0ed3ef48fabbe5"
+    },
+    {
+      "path": "LICENSE-CONTENT.md",
+      "bytes": 2085,
+      "sha256": "942f94c55e78d57f5e104d688234c017b5e3c1aa2795d00a72b9b336d612434b"
+    },
+    {
+      "path": "MIGRATION_V1_TO_V2.md",
+      "bytes": 1337,
+      "sha256": "220b2ab2d4224452db60463af0b005905163cdf2bc26ae446da4e5921d343d0d"
+    },
+    {
+      "path": "MIGRATION_V2.1_TO_V2.2.md",
+      "bytes": 1062,
+      "sha256": "20b1713ad87fa038b63e390a4964512473b1ee9a89fd1c2c0f7f6fcd34451d67"
+    },
+    {
+      "path": "PORTABILITY_AUDIT.md",
+      "bytes": 914,
+      "sha256": "3fcbe39507220889b638fbe14437d57e69948c2c862da504f6d8ffc90b8116fb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13075,
+      "sha256": "f2b79c1278a69344ebd5e69b41f08af5b8e9846645f68f3aac45a727ca6e449f"
+    },
+    {
       "path": "schemas/base_asset.schema.json",
       "bytes": 774,
       "sha256": "7c3a00b67995df47a92aa6afec51d54925f9cbab3480ee754364b9e56113947f"
     },
     {
-      "path": "schemas/card_plan.schema.json",
-      "bytes": 979,
-      "sha256": "a54219970e2fdf4c098d8dac35d97a313a8077ea99d79c336c81958a7f62abbb"
-    },
-    {
       "path": "schemas/card_plan_set.schema.json",
       "bytes": 155,
       "sha256": "67a96a379ee09057fde2d612053b5a9c401d4700d4271ef5224ff002e9ff556e"
+    },
+    {
+      "path": "schemas/card_plan.schema.json",
+      "bytes": 979,
+      "sha256": "a54219970e2fdf4c098d8dac35d97a313a8077ea99d79c336c81958a7f62abbb"
     },
     {
       "path": "schemas/compiled_prompt.schema.json",
@@ -243,14 +248,19 @@
       "sha256": "9b3992e887b9a4a561407e64fcf50cf77b739fee424f4673c9b7d5af713e6fab"
     },
     {
+      "path": "schemas/vocabulary_master.schema.json",
+      "bytes": 161,
+      "sha256": "523d3697a05eee0754f6c5eb9b53004d8cd2eecc30ae6b2a2c55b6209349b2f0"
+    },
+    {
       "path": "schemas/vocabulary.schema.json",
       "bytes": 1099,
       "sha256": "9400ece23b21fefd933f6f3c7a58c7229d5d2361278c948865603da5f375e8d9"
     },
     {
-      "path": "schemas/vocabulary_master.schema.json",
-      "bytes": 161,
-      "sha256": "523d3697a05eee0754f6c5eb9b53004d8cd2eecc30ae6b2a2c55b6209349b2f0"
+      "path": "SKILL.md",
+      "bytes": 3910,
+      "sha256": "078a172127265adda4b20b70b15e3be239aec4ec62fba39bf3b4cc3151011bdc"
     },
     {
       "path": "tools/validate_package.py",
