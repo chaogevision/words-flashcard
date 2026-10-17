@@ -8,9 +8,11 @@ description: "Agent-independent production protocol for curriculum-faithful prim
 
 # License and Allowed Use
 
-This Skill's executable protocol, workflow rules, adapters and supporting tools are governed by the [PolyForm Noncommercial License 1.0.0](LICENSE). The repository's original demo artwork and presentation materials have a separate [CC BY-NC 4.0 content license](LICENSE-CONTENT.md), subject to ownership and third-party rights.
+This Skill is distributed under the [Words Flashcard Community Noncommercial License 1.0](LICENSE), a custom source-available license (not an OSI-approved open-source license). Personal/family learning and genuinely noncommercial classroom teaching, including ordinary public-school instruction, are permitted within the License's terms.
 
-Use of this Skill for commercial purposes requires compliance with the applicable license terms or separate written permission. **PolyForm includes an explicit allowance for certain organizations, including educational institutions; consult the full license before determining whether a particular use needs separate permission.** Output files do not automatically inherit the repository's content license.
+**Advance written commercial authorization is required** for commercial training institutions, paid tutoring, paid courses, paid educational materials, paid education products, commercial SaaS, client deliverables, and use of the Skill to produce content for those purposes. An individual account or device does not exempt commercial use on behalf of an organization or paid service.
+
+Original demonstration artwork and presentation materials are separately subject to [CC BY-NC 4.0](LICENSE-CONTENT.md), to the extent owned by the Licensor. Independently generated outputs are not automatically owned or licensed by the project. Read the full licenses and respect third-party rights.
 
 # Mission
 Convert a curriculum vocabulary source into a production-ready, visually consistent flashcard set while preserving exact curriculum facts.
