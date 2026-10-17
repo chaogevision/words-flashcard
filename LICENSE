@@ -1,73 +1,83 @@
-# PolyForm Noncommercial License 1.0.0
+# Words Flashcard Community Noncommercial License 1.0
 
-<https://polyformproject.org/licenses/noncommercial/1.0.0>
+Copyright (c) 2026 chaogevision. All rights reserved except as expressly licensed below.
 
-## Acceptance
+**Important:** This is a custom source-available, noncommercial license, not an OSI-approved open-source license. This draft should be reviewed by qualified counsel before production release.
 
-In order to get any license under these terms, you must agree to them as both strict obligations and conditions to all your licenses.
+## 1. Scope and acceptance
 
-## Copyright License
+"Software" means the Words Flashcard Skill, its instructions, prompts, workflows, schemas, source code, adapters, tools, and modifications or derivative versions of those materials made from the licensed repository, to the extent owned and licensable by the Licensor.
 
-The licensor grants you a copyright license for the software to do everything you might do with the software that would otherwise infringe the licensor's copyright in it for any permitted purpose.  However, you may only distribute the software according to [Distribution License](#distribution-license) and make changes or new works based on the software according to [Changes and New Works License](#changes-and-new-works-license).
+The Licensor is the copyright holder of the relevant original materials. By exercising rights requiring copyright permission under this License, you accept its conditions. If you do not agree, you receive no permission under this License.
 
-## Distribution License
+Original images and presentation materials expressly identified in `LICENSE-CONTENT.md` have a separate content license. Third-party content is excluded.
 
-The licensor grants you an additional copyright license to distribute copies of the software.  Your license to distribute covers distributing the software with changes and new works permitted by [Changes and New Works License](#changes-and-new-works-license).
+## 2. Free permitted uses
 
-## Notices
+Subject to Sections 4–8, you may use, copy, modify, and redistribute the Software solely for the following **Permitted Noncommercial Uses**:
 
-You must ensure that anyone who gets a copy of any part of the software from you also gets a copy of these terms or the URL for them above, as well as copies of any plain-text lines beginning with `Required Notice:` that the licensor provided with the software.  For example:
+(a) Personal or family learning, private study, experimentation, and research not conducted for a paid client, employer's commercial offering, or revenue-generating product.
 
-> Required Notice: Copyright Yoyodyne, Inc. (http://example.com)
+(b) Classroom teaching by teachers in public schools, nonprofit schools, and other genuinely noncommercial educational settings, provided the use is not part of a separately charged course, commercial training service, paid teaching-material product, or commercial institution's offering. Ordinary public school funding and standard school tuition or cost-recovery fees alone do not automatically turn otherwise noncommercial classroom teaching into a Commercial Use; the actual offering and purpose control.
 
-## Changes and New Works License
+(c) Free educational sharing and community collaboration without a commercial purpose, subject to the attribution and redistribution conditions below.
 
-The licensor grants you an additional copyright license to make changes and new works based on the software for any permitted purpose.
+The permission in (b) does not extend to a commercial training institution merely because an individual teacher installs or runs the Software using a personal account or device.
 
-## Patent License
+## 3. Commercial Uses requiring advance written authorization
 
-The licensor grants you a patent license for the software that covers patent claims the licensor can license, or becomes able to license, that you would infringe by using the software.
+**You must obtain separate written commercial authorization from the Licensor BEFORE using the Software for any Commercial Use.** Commercial Use includes, whether conducted directly or indirectly:
 
-## Noncommercial Purposes
+(a) Using the Software in or for a commercial tutoring business, language training institution, commercial school, or other for-profit education or training provider, including internal preparation of teaching materials.
 
-Any noncommercial purpose is a permitted purpose.
+(b) Creating, preparing, supporting, delivering, or selling paid courses, paid tutoring, paid educational content, paid teaching materials, subscription content, or paid learning resources with the Software.
 
-## Personal Uses
+(c) Incorporating the Software or a modified version into any paid or commercial product, SaaS, API, application, workflow, service, customer deliverable, or product offered for commercial advantage.
 
-Personal use for research, experiment, and testing for the benefit of public knowledge, personal study, private entertainment, hobby projects, amateur pursuits, or religious observance, without any anticipated commercial application, is use for a permitted purpose.
+(d) Redistributing, sublicensing, selling, renting, hosting, or providing the Software or a modified version as part of a commercial service, including use by employees, contractors, or agents for such a purpose.
 
-## Noncommercial Organizations
+(e) Using the Software to perform paid client work or generate materials intended for commercial distribution, even if the Software is installed or operated through an individual's personal account, personal computer, or privately held credentials.
 
-Use by any charitable organization, educational institution, public research organization, public safety or health organization, environmental protection organization, or government institution is use for a permitted purpose regardless of the source of funding or obligations resulting from the funding.
+A free trial, indirect monetization, sponsorship, advertising-supported offering, or provision without a separate line-item software fee does not automatically make an otherwise commercial activity noncommercial. Whether an activity is commercial depends on its objective circumstances.
 
-## Fair Use
+**The trigger is the purpose and beneficiary of the use, not the identity of the account holder or the method of installation.**
 
-You may have "fair use" rights for the software under the law. These terms do not limit them.
+## 4. Attribution and redistribution
 
-## No Other Rights
+For any permitted copy or redistribution of the Software, including modified versions, you must:
+- preserve this License, applicable copyright notices, and attribution to the original project;
+- identify material changes and avoid suggesting endorsement by the Licensor;
+- make the applicable noncommercial restrictions available to recipients; and
+- not purport to grant recipients commercial rights that you do not hold.
 
-These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else.  These terms do not imply any other licenses.
+You may distribute modified versions for Permitted Noncommercial Uses under these same terms. You may not remove or circumvent the restrictions by repackaging, renaming, or moving the Software to another repository.
 
-## Patent Defense
+## 5. Generated outputs and third-party rights
 
-If you make any written claim that the software infringes or contributes to infringement of any patent, your patent license for the software granted under these terms ends immediately. If your company makes such a claim, your patent license ends immediately for work on behalf of your company.
+Flashcards and other outputs independently generated by using the Software do **not** automatically become owned by the Licensor or subject to the repository's content license solely because the Software was used. However, commercial use of the Software to produce those outputs still requires advance written authorization under Section 3.
 
-## Violations
+This License does not grant rights in third-party textbooks, vocabulary lists, trademarks, images, model-generated content, or other external materials. Their separate terms and applicable laws remain in effect.
 
-The first time you are notified in writing that you have violated any of these terms, or done anything with the software not covered by your licenses, your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to correct past violations, within 32 days of receiving notice.  Otherwise, all your licenses end immediately.
+## 6. Commercial licensing
 
-## No Liability
+For commercial authorization, open an issue at https://github.com/chaogevision/words-flashcard/issues/new and describe the organization, intended use, distribution channel, expected scale, and contact method. An inquiry or an unanswered request does not itself grant permission. Only express written authorization from the rights holder grants additional rights.
 
-***As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim.***
+## 7. No trademark license
 
-## Definitions
+No permission is granted to use the Licensor's trademarks, trade names, logos, or branding beyond legally permitted nominative reference.
 
-The **licensor** is the individual or entity offering these terms, and the **software** is the software the licensor makes available under these terms.
+## 8. Disclaimer and termination
 
-**You** refers to the individual or entity agreeing to these terms.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTIES OF ANY KIND, TO THE EXTENT PERMITTED BY APPLICABLE LAW. THE LICENSOR DISCLAIMS LIABILITY FOR DAMAGES TO THE EXTENT PERMITTED BY APPLICABLE LAW.
 
-**Your company** is any legal entity, sole proprietorship, or other kind of organization that you work for, plus all organizations that have control over, are under the control of, or are under common control with that organization.  **Control** means ownership of substantially all the assets of an entity, or the power to direct its management and policies by vote, contract, or otherwise.  Control can be direct or indirect.
+Any license granted under these terms terminates automatically upon a material violation, subject to applicable law. Termination does not retroactively extinguish valid rights previously granted under another license.
 
-**Your licenses** are all the licenses granted to you for the software under these terms.
+## 9. Prior releases and severability
 
-**Use** means anything you do with the software requiring one of your licenses.
+This License applies only to the versions and material the Licensor has authority to license under these terms. It does not revoke irrevocable rights validly granted for earlier versions, and it does not override third-party licenses.
+
+If a provision is held unenforceable, the remaining provisions continue to the extent permitted by applicable law.
+
+## 10. Governing law
+
+This License does not designate a governing law or forum. Applicable conflict-of-laws, copyright, and contract rules determine jurisdiction. Parties to a separate commercial agreement may specify governing law and dispute resolution in that agreement.
