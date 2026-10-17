@@ -169,13 +169,13 @@
     },
     {
       "path": "LICENSE",
-      "bytes": 4563,
-      "sha256": "c0ea4a896d2c8c394b29f9427589996db826cd501c512279ff0ed3ef48fabbe5"
+      "bytes": 6949,
+      "sha256": "c53dd211e68434d428e06e2fdc93ee3b0e56359fec687d365d70d28572f34975"
     },
     {
       "path": "LICENSE-CONTENT.md",
-      "bytes": 2085,
-      "sha256": "942f94c55e78d57f5e104d688234c017b5e3c1aa2795d00a72b9b336d612434b"
+      "bytes": 2100,
+      "sha256": "aa472d97fdf583cd961b7026f5bbb18a3503e2795da59a3d68573c620382b67b"
     },
     {
       "path": "MIGRATION_V1_TO_V2.md",
@@ -194,8 +194,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 13075,
-      "sha256": "f2b79c1278a69344ebd5e69b41f08af5b8e9846645f68f3aac45a727ca6e449f"
+      "bytes": 13199,
+      "sha256": "47a0cd3468ea959a731232a530a8dd27a98729f2945c7c385a4d99b8f8609ceb"
     },
     {
       "path": "schemas/base_asset.schema.json",
@@ -259,8 +259,8 @@
     },
     {
       "path": "SKILL.md",
-      "bytes": 3910,
-      "sha256": "078a172127265adda4b20b70b15e3be239aec4ec62fba39bf3b4cc3151011bdc"
+      "bytes": 4198,
+      "sha256": "dea5363d590a1901444a50b279d6fde6c1e51a37b09092d82e5394cb51dc0c02"
     },
     {
       "path": "tools/validate_package.py",
