@@ -6,6 +6,14 @@ contract_version: 1.0.0
 description: "Agent-independent production protocol for curriculum-faithful primary-school English scene flashcards."
 ---
 
+# License and Allowed Use
+
+This Skill is distributed under the [Words Flashcard Community Noncommercial License 1.0](LICENSE), a custom source-available license (not an OSI-approved open-source license). Personal/family learning and qualifying noncommercial classroom teaching and teacher preparation under LICENSE Section 2(b) are permitted. Standard school tuition, cost recovery, or teacher salaries alone do not trigger Section 3(b); separately charged tutoring and commercial educational offerings still require authorization.
+
+**Advance written commercial authorization is required** for commercial training institutions, paid tutoring, paid courses, paid educational materials, paid education products, commercial SaaS, client deliverables, and use of the Skill to produce content for those purposes. Commercial recruitment, free promotional or trial classes, gifts, retention services, and internal preparation also require authorization. Commissioned use and unpaid operators are covered according to the commercial purpose and beneficiary; personal accounts or devices do not create an exemption.
+
+Only the original content specifically identified in [LICENSE-CONTENT.md](LICENSE-CONTENT.md) uses CC BY-NC 4.0; embedded protocols, prompts, code, and third-party elements are excluded. CC NonCommercial is judged by the particular use, independently of the software license. Independently generated outputs are not automatically owned or licensed by the project. A genuine later change of purpose does not retroactively violate the software license or create a separate restriction on selling independent outputs without protected repository material; further commercial editing or production with the Skill requires authorization. Read LICENSE Section 5 and respect third-party rights. This summary grants no additional rights; the applicable full license controls.
+
 # Mission
 Convert a curriculum vocabulary source into a production-ready, visually consistent flashcard set while preserving exact curriculum facts.
 

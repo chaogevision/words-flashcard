@@ -1,0 +1,89 @@
+# Words Flashcard Community Noncommercial License 1.0
+
+Copyright (c) 2026 chaogevision. All rights reserved except as expressly licensed below.
+
+**Important:** This is a custom source-available, noncommercial license, not an OSI-approved open-source license. This draft should be reviewed by qualified counsel before production release.
+
+## 1. Scope and acceptance
+
+"Software" means the Words Flashcard Skill, its instructions, prompts, workflows, schemas, source code, adapters, tools, and modifications or derivative versions of those materials made from the licensed repository, to the extent owned and licensable by the Licensor.
+
+The Licensor is the copyright holder of the relevant original materials. By exercising rights requiring copyright permission under this License, you accept its conditions. If you do not agree, you receive no permission under this License.
+
+Original images and presentation materials expressly identified in `LICENSE-CONTENT.md` have a separate content license. Third-party content is excluded.
+
+## 2. Free permitted uses
+
+Subject to Sections 4–8, you may use, copy, modify, and redistribute the Software solely for the following **Permitted Noncommercial Uses**:
+
+(a) Personal or family learning, private study, experimentation, and research not conducted for a paid client, employer's commercial offering, or revenue-generating product.
+
+(b) Classroom teaching by teachers in public schools, nonprofit schools, and other genuinely noncommercial educational settings, provided the use is not part of a separately charged course, commercial training service, paid teaching-material product, or commercial institution's offering. Ordinary public school funding and standard school tuition or cost-recovery fees alone do not automatically turn otherwise noncommercial classroom teaching into a Commercial Use; the actual offering and purpose control.
+
+(c) Free educational sharing and community collaboration without a commercial purpose, subject to the attribution and redistribution conditions below.
+
+For the avoidance of doubt, classroom teaching that satisfies Section 2(b), including ordinary preparation by its teachers, is not a Commercial Use under Section 3(b) merely because the school receives standard tuition or cost-recovery fees or pays its teachers a salary. Separately charged tutoring, commercial training, paid teaching-material products, and for-profit educational offerings remain subject to Section 3.
+
+The permission in (b) does not extend to a commercial training institution merely because an individual teacher installs or runs the Software using a personal account or device.
+
+## 3. Commercial Uses requiring advance written authorization
+
+**You must obtain separate written commercial authorization from the Licensor BEFORE using the Software for any Commercial Use.** Commercial Use includes, whether conducted directly or indirectly:
+
+(a) Using the Software in or for a commercial tutoring business, language training institution, commercial school, or other for-profit education or training provider, including internal preparation of teaching materials.
+
+(b) Creating, preparing, supporting, delivering, or selling paid courses, paid tutoring, paid educational content, paid teaching materials, subscription content, or paid learning resources with the Software, except for qualifying classroom teaching and teacher preparation expressly permitted by Section 2(b).
+
+(c) Incorporating the Software or a modified version into any paid or commercial product, SaaS, API, application, workflow, service, customer deliverable, or product offered for commercial advantage.
+
+(d) Redistributing, sublicensing, selling, renting, hosting, or providing the Software or a modified version as part of a commercial service, including use by employees, contractors, or agents for such a purpose.
+
+(e) Using the Software to perform paid client work or generate materials intended for commercial distribution, even if the Software is installed or operated through an individual's personal account, personal computer, or privately held credentials.
+
+(f) Using the Software for recruitment, customer acquisition, retention, or fulfillment of a commercial education business, including free trial lessons, free promotional classes, gifts, and internal preparation. Use commissioned, directed, or performed on behalf of that business is included even if an individual operator is unpaid or no separate software fee is charged.
+
+Whether an activity is commercial depends on its objective purpose and beneficiary. Sponsorship or ordinary school funding alone does not disqualify otherwise qualifying Section 2(b) teaching; a free or sponsored offering serving a commercial business as described above does require authorization.
+
+**The trigger is the purpose and beneficiary of the use, not the identity of the account holder or the method of installation.**
+
+## 4. Attribution and redistribution
+
+For any permitted copy or redistribution of the Software, including modified versions, you must:
+- preserve this License, applicable copyright notices, and attribution to the original project;
+- identify material changes and avoid suggesting endorsement by the Licensor;
+- make the applicable noncommercial restrictions available to recipients; and
+- not purport to grant recipients commercial rights that you do not hold.
+
+You may distribute modified versions for Permitted Noncommercial Uses under these same terms. You may not remove or circumvent the restrictions on copying, modifying, or distributing the Software by repackaging, renaming, or moving it to another repository. This License does not claim exclusive rights in general ideas, teaching methods, facts, or independently developed workflows, and does not restrict uses for which applicable law requires no permission from the Licensor.
+
+## 5. Generated outputs and third-party rights
+
+Flashcards and other outputs independently generated by using the Software do **not** automatically become owned by the Licensor or subject to the repository's content license solely because the Software was used. However, commercial use of the Software to produce those outputs still requires advance written authorization under Section 3.
+
+A later change of purpose alone does not retroactively turn a genuinely permitted noncommercial use into a violation. This License does not impose a separate restriction on later commercial distribution of independently generated outputs that contain no protected repository material. However, further use of the Software to edit, expand, regenerate, or batch-produce outputs for a commercial purpose requires advance authorization. An asserted personal purpose does not exempt generation that was objectively intended for a commercial business or distribution from the outset. Outputs incorporating protected repository material remain subject to that material's applicable license.
+
+This License does not grant rights in third-party textbooks, vocabulary lists, trademarks, images, model-generated content, or other external materials. Their separate terms and applicable laws remain in effect.
+
+## 6. Commercial licensing
+
+For commercial authorization, open an issue at https://github.com/chaogevision/words-flashcard/issues/new and describe the organization, intended use, distribution channel, expected scale, and contact method. An inquiry or an unanswered request does not itself grant permission. Only express written authorization from the rights holder grants additional rights. That authorization should identify the authorized legal person or entity, permitted uses, duration, organizational or seat scope, output distribution rights, and any sublicensing rights; no such rights should be inferred from an inquiry or silence.
+
+## 7. No trademark license
+
+No permission is granted to use the Licensor's trademarks, trade names, logos, or branding beyond legally permitted nominative reference.
+
+## 8. Disclaimer and termination
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTIES OF ANY KIND, TO THE EXTENT PERMITTED BY APPLICABLE LAW. THE LICENSOR DISCLAIMS LIABILITY FOR DAMAGES TO THE EXTENT PERMITTED BY APPLICABLE LAW.
+
+Any license granted under these terms terminates automatically upon a material violation, subject to applicable law. Termination does not retroactively extinguish valid rights previously granted under another license.
+
+## 9. Prior releases and severability
+
+This License applies only to the versions and material the Licensor has authority to license under these terms. It does not revoke irrevocable rights validly granted for earlier versions, and it does not override third-party licenses.
+
+If a provision is held unenforceable, the remaining provisions continue to the extent permitted by applicable law.
+
+## 10. Governing law
+
+This License does not designate a governing law or forum. Applicable conflict-of-laws, copyright, and contract rules determine jurisdiction. Parties to a separate commercial agreement may specify governing law and dispute resolution in that agreement.
