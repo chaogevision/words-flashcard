@@ -44,8 +44,8 @@
     },
     {
       "path": "adapters/qwen_office/ADAPTER.md",
-      "bytes": 14748,
-      "sha256": "ded20f700fc20a88f32a86c698dd1501d4ad44dbd1c14f5741015e2b0ca47520"
+      "bytes": 14495,
+      "sha256": "c7c50ca312103a323f51ed90c6d16a251b367ccabed2f9b88b4329b5ec2bd5f0"
     },
     {
       "path": "adapters/qwen_office/OBSERVED_FAILURE_AUDIT.md",
@@ -59,8 +59,8 @@
     },
     {
       "path": "assets/golden_set/G3A-U01-C01-approved.png",
-      "bytes": 120371,
-      "sha256": "16f04154283f1da6e9065e1df90e5387d1bea18648848b62f640de8976f3146e"
+      "bytes": 7509,
+      "sha256": "e40c5e0002dff0a353be88a141a07422354e85aabf4cba660f71c13c9a268c4d"
     },
     {
       "path": "assets/golden_set/README.md",
@@ -69,13 +69,13 @@
     },
     {
       "path": "assets/style_references/connector-light-01.png",
-      "bytes": 130463,
-      "sha256": "93af98f1f2ca3f940e75219379de94673753bf192621b523ca3d93d34e03eff1"
+      "bytes": 15009,
+      "sha256": "a39eb4c2cec8bf8cb5be1085834171e2b5ba4c10e29b78bae9ff2b593e311820"
     },
     {
       "path": "assets/style_references/connector-light-02.png",
-      "bytes": 120471,
-      "sha256": "22bc47bdb996d0efed670b2c48dec56da2256ad95859190e8ab42d08735436ff"
+      "bytes": 15009,
+      "sha256": "b334aa6a206f0911c4b3e827f0f705aada6b6c416b5838b48bcd8c7b934da9d0"
     },
     {
       "path": "CHANGELOG.md",
@@ -164,18 +164,18 @@
     },
     {
       "path": "INSTALLATION.md",
-      "bytes": 662,
-      "sha256": "f1f088e30ca87abf5376f6e57f50cf72d305df5eee11c42ff1c81e875e98ef52"
+      "bytes": 999,
+      "sha256": "c07670ee1352d5a9603d742c0dc05aa90d70b49930c16c7796371de642b1b610"
     },
     {
       "path": "LICENSE",
-      "bytes": 6949,
-      "sha256": "c53dd211e68434d428e06e2fdc93ee3b0e56359fec687d365d70d28572f34975"
+      "bytes": 9056,
+      "sha256": "950b4df4a240e2ef1ed1e10182526f064982542328537f2cc67afc4249c4f19a"
     },
     {
       "path": "LICENSE-CONTENT.md",
-      "bytes": 2100,
-      "sha256": "aa472d97fdf583cd961b7026f5bbb18a3503e2795da59a3d68573c620382b67b"
+      "bytes": 4025,
+      "sha256": "49714e285c69f479ad90468c13fa529fceac520464c3031b65083b4ba79801b6"
     },
     {
       "path": "MIGRATION_V1_TO_V2.md",
@@ -194,8 +194,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 13199,
-      "sha256": "47a0cd3468ea959a731232a530a8dd27a98729f2945c7c385a4d99b8f8609ceb"
+      "bytes": 14567,
+      "sha256": "967851a7b509bb3d0a073d34651515c5933194f70d19b39260952ac5dba5ce59"
     },
     {
       "path": "schemas/base_asset.schema.json",
@@ -209,28 +209,28 @@
     },
     {
       "path": "schemas/card_plan.schema.json",
-      "bytes": 979,
-      "sha256": "a54219970e2fdf4c098d8dac35d97a313a8077ea99d79c336c81958a7f62abbb"
+      "bytes": 705,
+      "sha256": "2f17ebf2aa301bd893f9447b2e00e4a2183f0d24070c5fae295d6b44e0652e1e"
     },
     {
       "path": "schemas/compiled_prompt.schema.json",
-      "bytes": 720,
-      "sha256": "2a504d83b54bd9f1e92dbb4bdd6e3b4fd56695a47125c93088d24b709404dfb7"
+      "bytes": 543,
+      "sha256": "3ed896aa628698a7962952dea8c08dbf0c5cf9e228be01bf6d4e206418c758c3"
     },
     {
       "path": "schemas/layout_spec.schema.json",
-      "bytes": 3289,
-      "sha256": "de93aafe6a5e766da5665ebe2c1f9aa904ecb44ce6b252d4148986d81db355cd"
+      "bytes": 2042,
+      "sha256": "a6b37e7815e7979b001c2445b9eb70c33628ca7dd723c5da25cd43574596e257"
     },
     {
       "path": "schemas/manifest.schema.json",
-      "bytes": 1557,
-      "sha256": "b7dd70dcd105da21749d817a6af3da24c6fe44ac758696e32f960298fc092cf9"
+      "bytes": 1090,
+      "sha256": "a0cec9f79ff82dd5542800f632ef129f50a01d54586f872183456a0cdcdf702b"
     },
     {
       "path": "schemas/qa_report.schema.json",
-      "bytes": 904,
-      "sha256": "e714dd0adb4b2cd61c526c11429120300ad8bbcd2ad886acc4b05673f5207f62"
+      "bytes": 605,
+      "sha256": "032a142817ff207228814e0c6f81abdfedd2d5c10884b21c6237a76bb0a5d4fd"
     },
     {
       "path": "schemas/repair_action.schema.json",
@@ -239,13 +239,13 @@
     },
     {
       "path": "schemas/run_state.schema.json",
-      "bytes": 1145,
-      "sha256": "83cb5b72c74cf3403b80f9555e43e049d4d702374586478dcef25e1b0e7c7463"
+      "bytes": 805,
+      "sha256": "2ef2e3f7303f561b29124a520acfa794a1d76e2c93286e70ee20eefee254d542"
     },
     {
       "path": "schemas/scene_brief.schema.json",
-      "bytes": 2367,
-      "sha256": "9b3992e887b9a4a561407e64fcf50cf77b739fee424f4673c9b7d5af713e6fab"
+      "bytes": 1584,
+      "sha256": "79689af3ebf1f1fe12a8c99128bfbc64960cd890d263f02d95c2e1d55e3c9f7b"
     },
     {
       "path": "schemas/vocabulary_master.schema.json",
@@ -254,18 +254,18 @@
     },
     {
       "path": "schemas/vocabulary.schema.json",
-      "bytes": 1099,
-      "sha256": "9400ece23b21fefd933f6f3c7a58c7229d5d2361278c948865603da5f375e8d9"
+      "bytes": 734,
+      "sha256": "30785ae098162b0abb43614499d17efabe462cca1d04801d0a367800a6273980"
     },
     {
       "path": "SKILL.md",
-      "bytes": 4198,
-      "sha256": "dea5363d590a1901444a50b279d6fde6c1e51a37b09092d82e5394cb51dc0c02"
+      "bytes": 5023,
+      "sha256": "63e745f0a258316f5890c93a972da5d3e01641f204c146b5582ad7747e7ba479"
     },
     {
       "path": "tools/validate_package.py",
-      "bytes": 6044,
-      "sha256": "7d6c6992167f2e32d5afa23698733f5314b1a9512bcbd4146c212e4841df80b8"
+      "bytes": 7153,
+      "sha256": "43ba303f96da7c2a9354b7166ac22c5bb5c376ca6b51a6c9f27debe1887ff164"
     }
   ],
   "distribution_note": "GitHub repository distribution: reference PNGs are downscaled to max 320px for lightweight repository use; filenames and semantic reference roles are unchanged."
