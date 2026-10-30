@@ -1,0 +1,3 @@
+interface:
+  display_name: "Flashcard"
+  short_description: "Create sourced, multiword English scene flashcards."

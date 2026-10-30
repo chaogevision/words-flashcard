@@ -1,8 +1,8 @@
-# Words Flashcard｜英语场景闪卡生成 Skill
+# Flashcard｜英语场景闪卡生成 Skill
 
 > 把教材词表、自定义单词、短语或主题词汇，自动转换成场景化视觉闪卡。
 
-**Words Flashcard** 是一套用于生成英语场景闪卡的 AI Skill。
+**Flashcard** 是一套用于生成英语场景闪卡的 AI Skill。
 
 你可以上传教材词表，也可以直接输入自己整理的一组单词。系统会分析词义、词类和场景关系，把适合放在一起的词组织成自然画面，再生成包含 **英文、IPA、中文释义、视觉标签和语义指引** 的学习卡片。
 
@@ -53,6 +53,10 @@
 
 ---
 
+## 年级插画风格
+
+小学、初中、高中沿用同一套 Primary 多词场景闪卡结构。学段差异只体现在场景插画的人物年龄、环境、造型和配色；默认不加主题标题、年级标签、页眉、标题带或装饰边框。Single Word Flash Cards 的三张参考图只用于插画风格参考。详见 `core/visual_spec.md`。
+
 ## 这个 Skill 是做什么的？
 
 传统单词卡通常是：
@@ -65,7 +69,7 @@ apple
 
 孩子或学习者看到的是一个孤立单词。
 
-Words Flashcard 希望把词汇变成：
+Flashcard 希望把词汇变成：
 
 ```text
 单词
@@ -93,7 +97,7 @@ rabbit
 
 ## 你可以从任何词表开始
 
-Words Flashcard 不要求必须使用某一本教材。
+Flashcard 不要求必须使用某一本教材。
 
 你可以直接输入：
 
@@ -166,7 +170,7 @@ debug
 - 每次生成画风漂移
 - 换一个 AI 平台后结果完全不一致
 
-Words Flashcard 的核心原则是：
+Flashcard 的核心原则是：
 
 > **AI 负责画场景，确定性系统负责教学事实。**
 
@@ -195,7 +199,7 @@ Words Flashcard 的核心原则是：
 
 ## 用户提供的数据是事实源
 
-Words Flashcard 不默认把某一本教材当成唯一来源，而是遵循：
+Flashcard 不默认把某一本教材当成唯一来源，而是遵循：
 
 > **用户提供的数据是 Source of Truth。**
 
@@ -265,7 +269,7 @@ before
 
 通常依赖整个场景理解，而不是强行给某个物体拉一根线。
 
-因此 Words Flashcard 不是一个简单的 Prompt 集合，而是一套完整的 **Vocabulary → Scene → Flashcard** 生产流程。
+因此 Flashcard 不是一个简单的 Prompt 集合，而是一套完整的 **Vocabulary → Scene → Flashcard** 生产流程。
 
 ---
 
@@ -319,7 +323,7 @@ Approved Flashcard
 
 ## 支持多个 AI Agent
 
-Words Flashcard 的核心规则与具体 AI 平台分离。
+Flashcard 的核心规则与具体 AI 平台分离。
 
 同一套生产标准，可以针对不同平台加载不同 Adapter。
 
@@ -430,7 +434,7 @@ words-flashcard/
 
 ## 当前版本
 
-- Skill Protocol: **2.2.2**
+- Skill Protocol: **2.3.0**
 - Agent Contract: **1.0**
 - Visual Spec: **Flashcard Visual Spec V2**
 - Connector: **`connector.v3.light`**
@@ -464,7 +468,7 @@ words-flashcard/
 
 ## 项目目标
 
-Words Flashcard 不是为了让 AI：
+Flashcard 不是为了让 AI：
 
 > “画一张看起来很漂亮的单词卡。”
 

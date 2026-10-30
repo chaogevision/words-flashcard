@@ -1,4 +1,4 @@
-# Qwen Office Adapter — compatible with Skill V2.2.2
+# Qwen Office Adapter — compatible with Skill V2.3.0
 
 ## Purpose
 Adapt the Agent-Agnostic flashcard production protocol to observed **Qwen Office / 千问办公** behavior.

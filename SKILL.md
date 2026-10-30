@@ -1,13 +1,14 @@
 ---
-name: primary-school-english-scene-flashcards
-version: 2.2.2
-protocol: agent-agnostic
-contract_version: 1.0.0
-description: "Agent-independent production protocol for curriculum-faithful primary-school English scene flashcards."
+name: flashcard
+description: "Create curriculum-faithful multiword English scene flashcards across primary, middle, and high school."
+metadata:
+  version: "2.3.0"
+  protocol: "agent-agnostic"
+  contract_version: "1.0.0"
 ---
 
 # Mission
-Convert a curriculum vocabulary source into a production-ready, visually consistent flashcard set while preserving exact curriculum facts.
+Convert curriculum or user-supplied English vocabulary into production-ready, visually consistent multiword scene flashcards while preserving exact teaching facts across primary, middle, and high school.
 
 # Non-Negotiable Architecture
 Separate:
@@ -41,6 +42,7 @@ Read in this order:
 - Not every word gets a connector.
 - Base illustration must contain zero instructional typography.
 - Stage 08 must use authoritative vocabulary data, not OCR or generated text.
+- Do not add topic titles, grade labels, top headers, banners, or decorative frames unless the user explicitly asks for them.
 - Hard QA failure blocks `APPROVED`.
 - Repair the smallest failing layer when possible.
 
@@ -51,6 +53,11 @@ Read in this order:
 - deep navy English word
 - subordinate IPA and Chinese
 - pale gray-blue connectors only when instructionally useful
+- grade-appropriate illustration style comes from `core/visual_spec.md`; card structure stays the same across grades
+- no extra topic/grade title or title chrome by default
+
+## Grade-Appropriate Scene Style
+Read `core/visual_spec.md` when the card grade is primary, middle, or high school. The Primary multiword scene-card format remains authoritative; grade cues change only the scene illustration. The bundled reference images are style references for illustration only, not card layout or text.
 
 # Completion
 A batch is complete only when:

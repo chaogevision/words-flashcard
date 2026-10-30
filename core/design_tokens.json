@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "token_set": "flashcard.visual.v2",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "canvas_reference": {
     "width": 1536,
     "height": 2048,
@@ -21,20 +21,29 @@
       "role": "dominant",
       "color": "#0E2B6D",
       "weight": "bold",
-      "preferred_size_px_at_1536w": [60, 76],
+      "preferred_size_px_at_1536w": [
+        60,
+        76
+      ],
       "hard_min_px_at_1536w": 54
     },
     "ipa": {
       "role": "secondary",
       "color": "#56677F",
-      "preferred_size_px_at_1536w": [32, 42],
+      "preferred_size_px_at_1536w": [
+        32,
+        42
+      ],
       "hard_min_px_at_1536w": 28,
       "font_requirement": "full IPA glyph coverage"
     },
     "chinese": {
       "role": "secondary",
       "color": "#333333",
-      "preferred_size_px_at_1536w": [32, 42],
+      "preferred_size_px_at_1536w": [
+        32,
+        42
+      ],
       "hard_min_px_at_1536w": 28,
       "font_requirement": "CJK glyph coverage"
     }
@@ -43,12 +52,22 @@
     "token": "connector.v3.light",
     "line_color": "#B7C6D8",
     "line_opacity": 0.78,
-    "line_width_px_at_1536w": [2, 3],
-    "endpoint_dot_diameter_px_at_1536w": [6, 8],
+    "line_width_px_at_1536w": [
+      2,
+      3
+    ],
+    "endpoint_dot_diameter_px_at_1536w": [
+      6,
+      8
+    ],
     "endpoint_dot_color": "#A1B4CA",
     "start_dot": false,
     "shadow": false,
     "glow": false,
-    "forbidden_anchor_colors": ["red", "orange", "yellow"]
+    "forbidden_anchor_colors": [
+      "red",
+      "orange",
+      "yellow"
+    ]
   }
 }

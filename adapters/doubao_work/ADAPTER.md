@@ -1,4 +1,4 @@
-# Doubao Work Adapter — compatible with Skill V2.2.2
+# Doubao Work Adapter — compatible with Skill V2.3.0
 
 ## Purpose
 Adapt the Agent-Agnostic flashcard production protocol to observed Doubao Work behavior.

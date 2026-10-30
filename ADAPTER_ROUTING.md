@@ -45,7 +45,7 @@ At the beginning of a production run, write the following into the run manifest:
 
 ```json
 {
-  "skill_version": "2.2.2",
+  "skill_version": "2.3.0",
   "platform": "qwen_office",
   "adapter": "adapters/qwen_office/ADAPTER.md",
   "visual_spec": "Flashcard Visual Spec V2",

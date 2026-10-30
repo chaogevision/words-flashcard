@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.3.0 — Flashcard rename and cross-grade scene style
+- Renamed the skill slug to `flashcard` and its UI display name to `Flashcard`.
+- Added primary, middle-school, and high-school illustration guidance while keeping the Primary multiword scene-card structure unchanged.
+- Set no topic title, grade label, top header, banner, or decorative frame as the default card treatment.
+- Bundled the three user-selected Single Word style references for illustration-only use.
+
+
 ## 2.2.2 — Completeness and contract-consistency hotfix
 - Added the missing `engine/` interface layer promised by README architecture.
 - Added `core/design_tokens.json`, required by deterministic Stage 08 composition.
