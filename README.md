@@ -434,8 +434,8 @@ words-flashcard/
 
 ## 当前版本
 
-- Skill Protocol: **2.3.0**
-- Agent Contract: **1.0**
+- Skill Protocol: **2.6.0**
+- Agent Contract: **1.1.0**
 - Visual Spec: **Flashcard Visual Spec V2**
 - Connector: **`connector.v3.light`**
 
@@ -446,6 +446,8 @@ words-flashcard/
 - OpenAI / Codex Adapter
 - 豆包工作 Adapter
 - 千问办公 Adapter
+- WorkBuddy Adapter
+- 每张卡的 Stage 07 必须实际附上匹配学段的 art-only 风格参考图
 - Demo Gallery
 - Golden Set
 - JSON Schema

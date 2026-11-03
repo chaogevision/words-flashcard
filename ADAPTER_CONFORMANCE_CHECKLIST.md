@@ -6,6 +6,8 @@ A new Agent/Adapter is production-ready only when all boxes pass.
 - [ ] Can read curriculum/source files.
 - [ ] Can write structured JSON artifacts.
 - [ ] Can generate one base illustration per card.
+- [ ] Can attach the band-matched art-only style reference to every Stage 07 request and record the actual per-card attachment, path and SHA-256.
+- [ ] Blocks Stage 07 when the image-generation path cannot accept a reference image.
 - [ ] Can inspect images for semantic/style QA.
 - [ ] Can render deterministic text/labels/connectors OR hand off to a deterministic renderer.
 
@@ -21,6 +23,7 @@ A new Agent/Adapter is production-ready only when all boxes pass.
 ## Stage 07
 - [ ] Generates one card, not accidental batch collage/grid.
 - [ ] Produces zero instructional typography.
+- [ ] Uses a matching art-only reference image; a prose-only style description cannot pass.
 - [ ] Preserves required visual targets.
 - [ ] Leaves label-safe perimeter space.
 

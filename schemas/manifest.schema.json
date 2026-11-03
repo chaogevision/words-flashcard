@@ -2,22 +2,26 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "ApprovedManifest",
   "type": "object",
-  "required": ["batch_id","skill_version","adapter","cards","platform","visual_spec","connector_token"],
+  "required": ["batch_id","skill_version","adapter","cards","platform","visual_spec","connector_token","style_reference","style_reference_sha256"],
   "properties": {
     "batch_id": {"type": "string"},
     "skill_version": {"type": "string"},
     "adapter": {"type": "string"},
     "visual_spec": {"type": "string"},
     "connector_token": {"type": "string"},
+    "style_reference": {"type": "string","pattern": "^assets/grade_style_references/(primary|middle|high)_art\\.png$"},
+    "style_reference_sha256": {"type": "string","pattern": "^[a-f0-9]{64}$"},
     "cards": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["card_id","status","filename"],
+        "required": ["card_id","status","filename","style_reference_attached","style_reference_sha256"],
         "properties": {
           "card_id": {"type": "string"},
           "status": {"const": "APPROVED"},
           "filename": {"type": "string"},
+          "style_reference_attached": {"type": "boolean","const": true},
+          "style_reference_sha256": {"type": "string","pattern": "^[a-f0-9]{64}$"},
           "sha256": {"type": ["string","null"]},
           "source_ids": {"type": "array","items": {"type": "string"}},
           "qa_report": {"type": ["string","null"]}

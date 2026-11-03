@@ -30,13 +30,15 @@ Define canvas, safe area, label zones, reading order, anchor targets and connect
 Layout must anticipate labels; it must not treat labels as a late overlay after the scene is fixed.
 
 ## Stage 06 — Prompt Compile
-Compile scene + layout + visual rules into a base-illustration prompt.
+Compile scene + layout + visual rules into a base-illustration request. Select the age-matched art-only style image, verify its file and SHA-256, and include it as an image input in the compiled request.
 Hard requirement: prompt explicitly forbids instructional English, IPA, Chinese, label cards and connector graphics.
+Hard requirement: a prose description without the actual style image input is an invalid compilation.
 
 ## Stage 07 — Base Illustration
-Generate exactly one base illustration per card.
+Attach the selected style image to the actual generation request, then generate exactly one base illustration per card.
 Hard requirement: zero instructional typography and zero teaching connectors.
 If the platform bakes labels or readable teaching text into the illustration, Stage 07 fails.
+If the image model cannot accept the style image, stop before generation. Record the reference path, SHA-256 and actual attachment status per card.
 
 ## Stage 08 — Deterministic Compose
 Render authoritative English, IPA, Chinese gloss, label cards and connector graphics deterministically.
@@ -45,6 +47,7 @@ Generated pixels/OCR are never the authority for teaching text.
 ## Stage 09 — QA
 Run data, semantic, mapping, layout, connector, style and provenance QA.
 Any hard failure blocks approval.
+Verify the style reference path and file hash, and require per-card evidence that the matching image was attached to Stage 07. A missing, mismatched or unattached reference is a hard failure.
 Platform Adapter QA rules are additive and may tighten thresholds.
 
 ## Stage 10 — Targeted Repair

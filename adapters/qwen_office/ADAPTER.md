@@ -428,6 +428,13 @@ Fail/warn on generated readable or pseudo-readable text in Stage 07 base illustr
 → Stage 10 smallest-layer repair
 → Stage 11 Approved export
 
+Before each Stage 07 call, attach the band-matched art-only reference from
+`assets/grade_style_references/` as an image input, and record its path, SHA-256
+and per-card attachment status. Keep prompt prose consistent with the selected
+sample. If the active Qwen image-generation path cannot accept the reference,
+stop with `STYLE_REFERENCE_UNAVAILABLE`; a prose-only approximation cannot be
+approved.
+
 ---
 
 ## 16. Priority of Rules

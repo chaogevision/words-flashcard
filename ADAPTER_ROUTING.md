@@ -20,6 +20,7 @@ Later layers may tighten execution details but may not weaken earlier hard rules
 | OpenAI / ChatGPT environment | `adapters/openai/ADAPTER.md` |
 | Doubao Work / 豆包工作 | `adapters/doubao_work/ADAPTER.md` |
 | Qwen Office / 千问办公 | `adapters/qwen_office/ADAPTER.md` |
+| WorkBuddy | `adapters/workbuddy/ADAPTER.md` |
 | Unknown/generic Agent | `adapters/generic/ADAPTER_TEMPLATE.md` until a tested adapter exists |
 
 ## Important behavior
@@ -35,6 +36,9 @@ All platforms still use:
 - exact curriculum Source of Truth;
 - Stage 01–11 pipeline;
 - deterministic teaching text;
+- the audience-matched `primary_art.png`, `middle_art.png` or `high_art.png` attached from `assets/grade_style_references/` as an actual Stage 07 image input for every card;
+- a hard stop when the platform cannot attach that reference; prose-only style instructions cannot pass the gate;
+- per-card reference path, SHA-256 and attachment status in generation metadata and QA;
 - Flashcard Visual Spec V2;
 - `connector.v3.light`;
 - Core mapping modes;
@@ -45,12 +49,16 @@ At the beginning of a production run, write the following into the run manifest:
 
 ```json
 {
-  "skill_version": "2.3.0",
+  "skill_version": "2.6.0",
   "platform": "qwen_office",
   "adapter": "adapters/qwen_office/ADAPTER.md",
   "visual_spec": "Flashcard Visual Spec V2",
-  "connector": "connector.v3.light"
+  "connector": "connector.v3.light",
+  "style_reference": "assets/grade_style_references/middle_art.png",
+  "style_reference_sha256": "<sha256 of middle_art.png>"
 }
 ```
 
 This makes platform-specific behavior auditable and reproducible.
+
+Every Adapter must map the shared style-reference input to its platform's image-generation request. If no mapping is supported, return `STYLE_REFERENCE_UNAVAILABLE` and stop before Stage 07.

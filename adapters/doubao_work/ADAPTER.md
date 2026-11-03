@@ -195,17 +195,19 @@ Any garbled text-like pixels near an instructional target are a Stage 09 style/d
 
 Observed style drift across a single batch is unacceptable.
 
-Every Stage 07 prompt MUST repeat an immutable style block:
-- warm 2D children's storybook/textbook illustration
-- soft texture
-- rounded anatomy
-- controlled saturation
-- clean silhouettes
-- no 3D rendering
-- no semi-realistic anime
-- no glossy toy look
+Every Stage 07 request MUST attach the band-matched art-only sample:
+- primary -> `assets/grade_style_references/primary_art.png`
+- middle school -> `assets/grade_style_references/middle_art.png`
+- high school -> `assets/grade_style_references/high_art.png`
 
-When Doubao Work supports reference images, attach the same Golden Style Reference to every card in the batch.
+Describe the sample's visible medium, linework, shading and palette accurately.
+Do not add style words that contradict the sample (for example, do not request
+watercolour or gouache when the selected sample is crisp cel shading). The
+reference governs rendering; the prompt adds only scene-specific content and
+negative constraints such as no text or 3D elements. Attach the same selected
+file to every Stage 07 request in that batch, and record its path, SHA-256 and
+actual per-card attachment status. If this Work mode cannot pass an image
+reference to generation, stop with `STYLE_REFERENCE_UNAVAILABLE`.
 
 Hard fail if one batch mixes substantially different rendering families.
 

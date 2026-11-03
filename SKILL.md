@@ -2,9 +2,9 @@
 name: flashcard
 description: "Create curriculum-faithful multiword English scene flashcards across primary, middle, and high school."
 metadata:
-  version: "2.3.0"
+  version: "2.6.0"
   protocol: "agent-agnostic"
-  contract_version: "1.0.0"
+  contract_version: "1.1.0"
 ---
 
 # Mission
@@ -59,6 +59,8 @@ Read in this order:
 ## Grade-Appropriate Scene Style
 Read `core/visual_spec.md` when the card grade is primary, middle, or high school. The Primary multiword scene-card format remains authoritative; grade cues change only the scene illustration. The bundled reference images are style references for illustration only, not card layout or text.
 
+Before any Stage 07 generation, every Agent must select the matching `<band>_art.png` and attach that actual image file to the image-generation request. Style prose alone does not satisfy this requirement. If the Agent or image model cannot accept an image reference, stop before generation and report `STYLE_REFERENCE_UNAVAILABLE`; do not approve a prose-only substitute. Record the selected path, SHA-256, and actual attachment status for every generated card.
+
 # Completion
 A batch is complete only when:
 1. source coverage is complete;
@@ -72,8 +74,14 @@ A batch is complete only when:
 - OpenAI: `adapters/openai/ADAPTER.md`
 - Doubao Work: `adapters/doubao_work/ADAPTER.md`
 - Qwen Office: `adapters/qwen_office/ADAPTER.md`
+- WorkBuddy: `adapters/workbuddy/ADAPTER.md`
 
 Platform adapters may tighten execution thresholds (for example label size and connector-length limits) but may not weaken Core hard gates.
+
+# Reference Tools
+- `tools/compose_cards.py` — target-first deterministic Stage 08 composer with a connector length ceiling.
+- `tools/qa_check.py` — Stage 09 gate: data, mapping, geometry and asset checks.
+- `tools/validate_package.py` — package integrity check.
 
 
 # Adapter Selection Rule

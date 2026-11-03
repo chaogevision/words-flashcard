@@ -34,6 +34,10 @@
 
 ### Style QA
 - batch style is coherent;
+- the selected band-matched art-only style image is actually attached to every Stage 07 request;
+- reference path is one of the packaged `<band>_art.png` files and its recorded SHA-256 matches the file;
+- style prose does not contradict the attached sample;
+- missing, unavailable, mismatched or unattached references block approval;
 - no pseudo-text/signage contamination;
 - no rendering-family drift;
 - no edge artifacts, blur blobs or unexplained shapes.
@@ -54,6 +58,9 @@
 `LAYOUT_COLLISION`
 `STYLE_FAIL_CONNECTOR_V3`
 `STYLE_DRIFT`
+`STYLE_REFERENCE_UNAVAILABLE`
+`STYLE_REFERENCE_NOT_ATTACHED`
+`STYLE_REFERENCE_MISMATCH`
 `COMPOSER_UNAVAILABLE`
 
 Platform Adapters may add codes but may not weaken these gates.

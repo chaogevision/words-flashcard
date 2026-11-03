@@ -1,6 +1,6 @@
 {
   "package": "flashcard",
-  "version": "2.3.0",
+  "version": "2.6.0",
   "manifest_excludes_self": true,
   "required_dirs": [
     "core",
@@ -10,27 +10,27 @@
     "assets",
     "tools"
   ],
-  "file_count_excluding_manifest": 53,
+  "file_count_excluding_manifest": 59,
   "files": [
     {
       "path": "ADAPTER_CONFORMANCE_CHECKLIST.md",
-      "bytes": 1668,
-      "sha256": "acde01b4d14ff971a23c22415a08b855236f10d4df63247f6845b1b51dd52e4e"
+      "bytes": 1992,
+      "sha256": "d239f834cdfbb844738f71e505bdc68f38890ae89d56de8c2b0537031c420b51"
     },
     {
       "path": "ADAPTER_ROUTING.md",
-      "bytes": 1938,
-      "sha256": "2b9a5ab5edb9cfacc4217526158323cea86d379f6d74074f4316d5957bf5f28d"
+      "bytes": 2681,
+      "sha256": "6ee9ce0d2cb63b16309772e3c1e0e226b4e717379cc903972e9fdcca5e2a3e95"
     },
     {
       "path": "AGENT_CONTRACT.md",
-      "bytes": 5933,
-      "sha256": "e91e41235c6e4c57fe4a5e3c600bf6ca7708eaf3ca423ba484a5f2a67b842f5a"
+      "bytes": 6747,
+      "sha256": "769e3b258dba6391f814c11fbcaf0fd23c62ae3feaf4da68ecbfb29480a57e93"
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 2298,
-      "sha256": "359fc5068f99a9fb38aa1e2e72ae26d11806499f1f068cec5014ba3f44bd259e"
+      "bytes": 9477,
+      "sha256": "46dab00175d52f294d1616f169a566d5610248cc786690ae1b8a4b12d54dfc43"
     },
     {
       "path": "INSTALLATION.md",
@@ -49,23 +49,23 @@
     },
     {
       "path": "PORTABILITY_AUDIT.md",
-      "bytes": 914,
-      "sha256": "3fcbe39507220889b638fbe14437d57e69948c2c862da504f6d8ffc90b8116fb"
+      "bytes": 1089,
+      "sha256": "b09d4f5f14281e2b1d19850c1aeb40472c1b5e956a24b11171eecd7ad78501ec"
     },
     {
       "path": "README.md",
-      "bytes": 11576,
-      "sha256": "51363d314e45a39b1318d4a8615bb72d60c9d52015c5f39ed114804824f03383"
+      "bytes": 11681,
+      "sha256": "943bfff7451b85032944f7aae1f020689311ad52620792656fdf71b3df85bb7f"
     },
     {
       "path": "SKILL.md",
-      "bytes": 3827,
-      "sha256": "81039ab5ae9de68645c493d7dd4f0c57e668fd014266c77a95f66b1aeed4720e"
+      "bytes": 4606,
+      "sha256": "ebbdef14d3dcd2e47cf6f186a05362edc603e913f13c26ac7d3c9b246cb2d968"
     },
     {
       "path": "adapters/doubao_work/ADAPTER.md",
-      "bytes": 8669,
-      "sha256": "07ff1e1ce3c37d0054f131c063130a13312ddd764aff0eab99708298d0e0ba75"
+      "bytes": 9169,
+      "sha256": "3211cbfe0ca7458b6dd819d3f7a2b466a55eb6cfa66e4767f111dd2e249b810d"
     },
     {
       "path": "adapters/doubao_work/OBSERVED_FAILURE_AUDIT.md",
@@ -74,23 +74,28 @@
     },
     {
       "path": "adapters/generic/ADAPTER_TEMPLATE.md",
-      "bytes": 732,
-      "sha256": "790e127d2e245d3d69c9c9e60ba68605ecb7e8914163b08913b8fc48e63dbe79"
+      "bytes": 1086,
+      "sha256": "5c396f3d960fbedf035d7c224756d5c3fabec6a26ac6762522da2e5571c28033"
     },
     {
       "path": "adapters/openai/ADAPTER.md",
-      "bytes": 983,
-      "sha256": "bc37d6e104f2a9f20c36872d149c0b006d6062de03500add622267efc4ca23ed"
+      "bytes": 1402,
+      "sha256": "52d954abe9a15c43303f03ab819c639060e588c48a82a8514f694062c0311250"
     },
     {
       "path": "adapters/qwen_office/ADAPTER.md",
-      "bytes": 14495,
-      "sha256": "edae6a789407d7febab5e0596ff29078fedf31ac2cd5d5da6dbf885eaa6b132a"
+      "bytes": 14897,
+      "sha256": "05f823784b68a65a73baa0f76aa36fa4940f7f77c790c4c006c9f64005618e4c"
     },
     {
       "path": "adapters/qwen_office/OBSERVED_FAILURE_AUDIT.md",
       "bytes": 5479,
       "sha256": "4cb7f2ffee45a4e077de071b106100a46b28f7cb7e1ee93ef9ddd8fdeba0f9bc"
+    },
+    {
+      "path": "adapters/workbuddy/ADAPTER.md",
+      "bytes": 15490,
+      "sha256": "e1de3e7c248bf713dd4913b66ad96738090e6b835c004d22ce0d14aab0e11da2"
     },
     {
       "path": "agents/openai.yaml",
@@ -113,14 +118,29 @@
       "sha256": "21f6f5fff70a1dfd47c87b268118436d4815cd00aeae743eb5d49b5c1a66bbb8"
     },
     {
+      "path": "assets/grade_style_references/high_art.png",
+      "bytes": 821611,
+      "sha256": "3d9ee9003d36cf46890286cc53d994f14037e22771b9792850ae1285b24877ae"
+    },
+    {
       "path": "assets/grade_style_references/middle.png",
       "bytes": 917524,
       "sha256": "0a72d81bba4992ce6bce2e183439e35b5d8df0ffd7479116b89523806eb81fb2"
     },
     {
+      "path": "assets/grade_style_references/middle_art.png",
+      "bytes": 726067,
+      "sha256": "cfe39703930f3c6f64addf13d3c718e50d6512b26294ad397b25b803beac3e72"
+    },
+    {
       "path": "assets/grade_style_references/primary.png",
       "bytes": 1025161,
       "sha256": "8de0ad0df8264751f3ec4d71746c29c15574ab6dc16d2b1a61fefce9c8ab0479"
+    },
+    {
+      "path": "assets/grade_style_references/primary_art.png",
+      "bytes": 855594,
+      "sha256": "81961042c8826679cad1c27ea98309a07cbf4f59b149ac20d72df749c35e04b4"
     },
     {
       "path": "assets/style_references/connector-light-01.png",
@@ -149,8 +169,8 @@
     },
     {
       "path": "core/qa_rules.md",
-      "bytes": 1603,
-      "sha256": "60b9eaf2a1ae304bcbbbbd17dd85d1d2ba9539b8cd73cec7c5ff4e54f250675d"
+      "bytes": 2025,
+      "sha256": "704ca425bf18ab68a9b09f5dddab68bc9abf09ba49278c439fcb44af12019cee"
     },
     {
       "path": "core/scene_brief_rules.md",
@@ -164,13 +184,13 @@
     },
     {
       "path": "core/visual_spec.md",
-      "bytes": 3415,
-      "sha256": "b65989a095dce216b17684197030942d4f0871de94f63a64bd9f83267d4784a0"
+      "bytes": 5231,
+      "sha256": "9f3c6a9d795a5584e0f24b91bd6141b49be35ef1541d1c59962187b92c7dac5e"
     },
     {
       "path": "core/workflow.md",
-      "bytes": 2965,
-      "sha256": "3e6c862253dcd029da40ef50a20d62f9603863f80c04844b3ab1114c3af44b17"
+      "bytes": 3611,
+      "sha256": "e50886e59edd1526b9068839ad3c07a9455cd7ced41f66a53c9354b518936180"
     },
     {
       "path": "engine/README.md",
@@ -189,8 +209,8 @@
     },
     {
       "path": "engine/prompt_compiler_contract.md",
-      "bytes": 579,
-      "sha256": "5e13985c1f103286c36f26f6c7d31c3b2a00ad35e8d591bdcd7b726f59543876"
+      "bytes": 1130,
+      "sha256": "790287b19dea8a035f4444db90ae26f20464d3ed688d9e77f35fb8b93f55a77e"
     },
     {
       "path": "engine/qa_engine_contract.md",
@@ -214,8 +234,8 @@
     },
     {
       "path": "schemas/base_asset.schema.json",
-      "bytes": 774,
-      "sha256": "7c3a00b67995df47a92aa6afec51d54925f9cbab3480ee754364b9e56113947f"
+      "bytes": 1112,
+      "sha256": "e568b30849c035130134a675f5817b727762d28b79febe25c06bf6780c8b4b2b"
     },
     {
       "path": "schemas/card_plan.schema.json",
@@ -229,8 +249,8 @@
     },
     {
       "path": "schemas/compiled_prompt.schema.json",
-      "bytes": 543,
-      "sha256": "3ed896aa628698a7962952dea8c08dbf0c5cf9e228be01bf6d4e206418c758c3"
+      "bytes": 836,
+      "sha256": "138b54648dfb83bade76272feb64da794bcaa8217c5976b834cac8c70457d5d8"
     },
     {
       "path": "schemas/layout_spec.schema.json",
@@ -239,13 +259,13 @@
     },
     {
       "path": "schemas/manifest.schema.json",
-      "bytes": 1090,
-      "sha256": "a0cec9f79ff82dd5542800f632ef129f50a01d54586f872183456a0cdcdf702b"
+      "bytes": 1540,
+      "sha256": "7627cc99f22f9ac5de53d168bd7649a971363d5b17707a853e51f04af526edb3"
     },
     {
       "path": "schemas/qa_report.schema.json",
-      "bytes": 605,
-      "sha256": "032a142817ff207228814e0c6f81abdfedd2d5c10884b21c6237a76bb0a5d4fd"
+      "bytes": 1049,
+      "sha256": "91348b868912a9926898f5cbed358efc0b3073cdca20eaa978297c35b7ca438d"
     },
     {
       "path": "schemas/repair_action.schema.json",
@@ -273,10 +293,20 @@
       "sha256": "523d3697a05eee0754f6c5eb9b53004d8cd2eecc30ae6b2a2c55b6209349b2f0"
     },
     {
+      "path": "tools/compose_cards.py",
+      "bytes": 34173,
+      "sha256": "fec733f612890949e2819966b909533b58690a6edc83579b56106a4ba3aaf273"
+    },
+    {
+      "path": "tools/qa_check.py",
+      "bytes": 11300,
+      "sha256": "ea8ab256cc19a8f65af0fcc648763678196c140ca2f771d6f1a9390b58ec936d"
+    },
+    {
       "path": "tools/validate_package.py",
-      "bytes": 7153,
-      "sha256": "43ba303f96da7c2a9354b7166ac22c5bb5c376ca6b51a6c9f27debe1887ff164"
+      "bytes": 7815,
+      "sha256": "4bd3259ab37e85e501d9a046a313105b6896dfff2615c8e6715cd83d590e5f28"
     }
   ],
-  "distribution_note": "GitHub repository distribution: reference PNGs are downscaled to max 320px for lightweight repository use; filenames and semantic reference roles are unchanged."
+  "distribution_note": "ZIP distribution: every distributable file is listed with its size and SHA-256, so validate_package.py --strict can verify the archive byte for byte. Local installation metadata is excluded. demo/ is repository-only presentation content and is excluded from the manifest."
 }

@@ -23,10 +23,28 @@ required_files = [
     'schemas/manifest.schema.json', 'schemas/run_state.schema.json',
     'adapters/generic/ADAPTER_TEMPLATE.md', 'adapters/openai/ADAPTER.md',
     'adapters/doubao_work/ADAPTER.md', 'adapters/qwen_office/ADAPTER.md',
-    'assets/golden_set/README.md', 'assets/golden_set/G3A-U01-C01-approved.png'
+    'adapters/workbuddy/ADAPTER.md',
+    'tools/compose_cards.py', 'tools/qa_check.py',
+    'assets/golden_set/README.md', 'assets/golden_set/G3A-U01-C01-approved.png',
+    'assets/grade_style_references/primary.png',
+    'assets/grade_style_references/middle.png',
+    'assets/grade_style_references/high.png',
+    'assets/grade_style_references/primary_art.png',
+    'assets/grade_style_references/middle_art.png',
+    'assets/grade_style_references/high_art.png'
 ]
 
 errors = []
+
+
+def _ref_is_pattern(ref):
+    """Glob / brace shorthand in prose is documentation, not a package path."""
+    return any(ch in ref for ch in "*?[]{}")
+
+
+def _keep_ref(ref):
+    return not _ref_is_pattern(ref)
+
 for d in required_dirs:
     if not (root / d).is_dir():
         errors.append(f'missing required directory: {d}/')
@@ -109,6 +127,8 @@ if args.strict:
             if ref.endswith('/*.json') or ref == 'schemas/*.json' or ref == 'engine/*.md':
                 if not list(root.glob(ref)):
                     errors.append(f'{md.relative_to(root)} unresolved glob reference: {ref}')
+            elif _ref_is_pattern(ref):
+                continue
             elif any(ref.startswith(prefix) for prefix in ['core/', 'engine/', 'schemas/', 'adapters/', 'assets/', 'tools/']) and (' ' not in ref):
                 if not (root / ref).exists():
                     errors.append(f'{md.relative_to(root)} unresolved package reference: {ref}')

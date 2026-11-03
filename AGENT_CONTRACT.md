@@ -1,4 +1,4 @@
-# Agent Contract 1.0
+# Agent Contract 1.1
 
 ## 1. Purpose
 This contract defines what **any Agent** must read, produce, validate, and preserve to execute the flashcard Skill without relying on previous conversation history.
@@ -15,6 +15,7 @@ An Adapter declares these capabilities:
 | `read_files` | yes | source vocab + references |
 | `write_files` | yes | JSON/PNG/reports/manifests |
 | `image_generate` | yes for Stage 07 | produce base illustration |
+| `style_reference_input` | yes for Stage 07 | attach the audience-matched bundled art sample to each image-generation request |
 | `image_inspect` | yes | semantic/style QA |
 | `deterministic_compose` | strongly required | exact labels/connectors |
 | `image_edit` | optional | targeted illustration repair |
@@ -49,12 +50,13 @@ Gate: explicit label zones and connector policies.
 ### Stage 06 — Prompt Compile
 Input: SceneBrief + LayoutSpec + visual rules.
 Output: `CompiledPrompt` conforming to `schemas/compiled_prompt.schema.json`.
-Gate: prompt explicitly forbids instructional typography.
+Gate: prompt forbids instructional typography and records the grade-matched art-only reference path and SHA-256.
 
 ### Stage 07 — Base Illustration
-Input: CompiledPrompt.
+Input: CompiledPrompt plus the referenced style image attached to the actual image-generation request.
 Output: one base illustration image + metadata conforming to `schemas/base_asset.schema.json`.
 Hard rule: zero instructional English / IPA / Chinese / label cards / connector graphics.
+Hard gate: record `style_reference_attached: true` only when the actual Stage 07 request included the matching image. If image-reference input is unavailable or omitted, stop with `STYLE_REFERENCE_UNAVAILABLE` or `STYLE_REFERENCE_NOT_ATTACHED`; do not advance to `GENERATED` or `APPROVED`.
 
 ### Stage 08 — Deterministic Compose
 Input: base illustration + authoritative VocabularyMaster + LayoutSpec + design tokens.
@@ -115,6 +117,9 @@ Minimum standard error codes:
 - `LAYOUT_COLLISION`
 - `STYLE_FAIL_CONNECTOR_V3`
 - `STYLE_DRIFT`
+- `STYLE_REFERENCE_UNAVAILABLE`
+- `STYLE_REFERENCE_NOT_ATTACHED`
+- `STYLE_REFERENCE_MISMATCH`
 - `COMPOSER_UNAVAILABLE`
 
 ## 7. Determinism Boundary
@@ -124,6 +129,8 @@ The following must be deterministic for production approval:
 - exact Chinese gloss
 - card ID / vocabulary identity
 - label/connector style token selection
+- selected style-reference path and SHA-256
+- whether the reference image was actually attached to each Stage 07 request
 - lifecycle status
 - output manifest
 
@@ -156,6 +163,7 @@ Supported adapters in this package include:
 - OpenAI: `adapters/openai/ADAPTER.md`
 - Doubao Work: `adapters/doubao_work/ADAPTER.md`
 - Qwen Office: `adapters/qwen_office/ADAPTER.md`
+- WorkBuddy: `adapters/workbuddy/ADAPTER.md`
 
 Platform-specific corrective rules MUST NOT be indiscriminately merged across platforms. An Adapter may tighten thresholds but may not weaken curriculum facts, hard QA gates, lifecycle semantics, or active visual tokens.
 

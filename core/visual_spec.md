@@ -18,12 +18,41 @@ Use curriculum grade or the user's stated audience to select age cues. Preserve 
 These are guidance, not rigid age stereotypes. Let the vocabulary group and teaching sense determine the scene. If the grade is unknown, keep the established batch style and ask only when age materially affects the scene.
 
 ## Style reference images
-The packaged files under `assets/grade_style_references/` come from the user's Single Word Flash Cards style references:
-- `primary.png`
-- `middle.png`
-- `high.png`
+`assets/grade_style_references/` ships one reference per school band:
+`primary.png`, `middle.png`, `high.png` (941x1672). They define the illustration
+family: medium, linework, palette, character rendering, light and level of detail.
 
-Use them only to inform the scene illustration's character rendering, palette, texture, and mood. Ignore their typography, grade/topic headings, title bands, page borders, one-word card structure, sentence panels, and related-word footers. Never copy their teaching text into a new base illustration.
+Each band also ships a `<band>_art.png` (640x960): the reference card's
+illustration area only, cropped to a 2:3 portrait window, with every heading, IPA
+row, word chip, example panel and decorative frame removed. **That is the only
+style-reference file to attach to the image model.** The full `<band>.png` card
+stays as an approval reference for label hierarchy and layout and must never be
+sent as the generation reference.
+
+**The reference is an input, not a description.** Stage 07 MUST attach the
+band-matching file as the image-model input (`image1`) and MUST ask the model to
+match its rendering family. Describing the style in words only is not compliance:
+a text-only prompt reproduces the wording, not the look, and the batch drifts.
+
+Rules:
+1. Select `primary_art.png` for primary, `middle_art.png` for middle school,
+   and `high_art.png` for high school. Infer the band from the source textbook or
+   the user's stated audience; if neither identifies it, clarify before
+   generation. Attach the selected file as an actual image input to every Stage
+   07 request. A prose-only description is not a substitute.
+2. One reference per batch. Never mix bands inside a batch. If a platform cannot
+   attach an image input, stop with `STYLE_REFERENCE_UNAVAILABLE`.
+3. Record the relative path and SHA-256 in the CompiledPrompt, base-asset
+   metadata and run manifest. Set `style_reference_attached: true` only after the
+   actual generation request includes that file. Missing attachment evidence is
+   a hard QA failure.
+4. The reference governs rendering only. Ignore its typography, grade/topic
+   headings, title bands, page borders, one-word card structure, sentence panels
+   and related-word footers, and NEVER copy its teaching text into the base.
+5. `assets/style_references/connector-light-01.png`, `connector-light-02.png` and
+   `assets/golden_set/G3A-U01-C01-approved.png` are approval references for
+   layout, label hierarchy and connector salience. They are for comparison at
+   review time, not inputs to the image model.
 
 ## Label cards
 - white / light-warm rounded rectangle;

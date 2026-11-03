@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "BaseIllustrationAsset",
   "type": "object",
-  "required": ["card_id", "filename", "width", "height", "text_policy", "adapter"],
+  "required": ["card_id", "filename", "width", "height", "text_policy", "adapter", "style_reference", "style_reference_sha256", "style_reference_attached"],
   "properties": {
     "card_id": {"type": "string", "minLength": 1},
     "filename": {"type": "string", "minLength": 1},
@@ -10,6 +10,9 @@
     "height": {"type": "integer", "minimum": 1},
     "sha256": {"type": ["string", "null"]},
     "adapter": {"type": "string", "minLength": 1},
+    "style_reference": {"type": "string","pattern": "^assets/grade_style_references/(primary|middle|high)_art\\.png$"},
+    "style_reference_sha256": {"type": "string","pattern": "^[a-f0-9]{64}$"},
+    "style_reference_attached": {"type": "boolean","const": true},
     "text_policy": {"const": "ZERO_INSTRUCTIONAL_TYPOGRAPHY"},
     "generator": {"type": ["string", "null"]},
     "generated_at": {"type": ["string", "null"]},

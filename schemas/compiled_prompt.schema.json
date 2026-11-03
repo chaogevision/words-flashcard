@@ -2,13 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "CompiledPrompt",
   "type": "object",
-  "required": ["card_id","prompt","text_policy"],
+  "required": ["card_id","prompt","text_policy","style_reference","style_reference_sha256"],
   "properties": {
     "card_id": {"type": "string"},
     "prompt": {"type": "string","minLength": 1},
     "negative_constraints": {"type": "array","items": {"type": "string"}},
     "text_policy": {"type": "string","const": "ZERO_INSTRUCTIONAL_TYPOGRAPHY"},
     "adapter": {"type": ["string","null"]},
+    "style_reference": {"type": "string","pattern": "^assets/grade_style_references/(primary|middle|high)_art\\.png$"},
+    "style_reference_sha256": {"type": "string","pattern": "^[a-f0-9]{64}$"},
+    "input_fidelity": {"type": ["string","null"]},
     "version": {"type": ["string","null"]}
   },
   "additionalProperties": true

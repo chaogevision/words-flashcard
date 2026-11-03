@@ -6,7 +6,18 @@
   "properties": {
     "card_id": {"type": "string"},
     "overall": {"enum": ["PASS","FAIL"]},
-    "checks": {"type": "object","additionalProperties": {"enum": ["PASS","FAIL","WARN","N/A"]}},
+    "checks": {
+      "type": "object",
+      "required": ["data_qa","mapping_qa","layout_qa","style_qa","style_reference"],
+      "properties": {
+        "data_qa": {"enum": ["PASS","FAIL","WARN","N/A"]},
+        "mapping_qa": {"enum": ["PASS","FAIL","WARN","N/A"]},
+        "layout_qa": {"enum": ["PASS","FAIL","WARN","N/A"]},
+        "style_qa": {"enum": ["PASS","FAIL","WARN","N/A"]},
+        "style_reference": {"enum": ["PASS","FAIL","WARN","N/A"]}
+      },
+      "additionalProperties": {"enum": ["PASS","FAIL","WARN","N/A"]}
+    },
     "failure_codes": {"type": "array","items": {"type": "string"}},
     "notes": {"type": "array","items": {"type": "string"}},
     "repair_class": {"type": ["string","null"]},
