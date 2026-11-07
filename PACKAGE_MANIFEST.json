@@ -29,8 +29,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 9477,
-      "sha256": "46dab00175d52f294d1616f169a566d5610248cc786690ae1b8a4b12d54dfc43"
+      "bytes": 10006,
+      "sha256": "d1df27f1939db0e7638c867f998e671139482bddeb3798089950030615847cdc"
     },
     {
       "path": "INSTALLATION.md",
@@ -104,28 +104,28 @@
     },
     {
       "path": "assets/golden_set/G3A-U01-C01-approved.png",
-      "bytes": 7509,
-      "sha256": "e40c5e0002dff0a353be88a141a07422354e85aabf4cba660f71c13c9a268c4d"
+      "bytes": 139305,
+      "sha256": "bea7b466d2c7af36e04fc2488a2ca39450d61f231dacf4b9c2eabeca8d87155c"
     },
     {
       "path": "assets/golden_set/README.md",
-      "bytes": 552,
-      "sha256": "ba988b1effcb615a2889646bb3939920e936b7048a05e08e6cec9a985405ff47"
+      "bytes": 919,
+      "sha256": "6eb5010829fd2a266b42e6c8b83f4f67f12ca300bd0e7d5d2b4a8a586c095b4b"
     },
     {
       "path": "assets/grade_style_references/high.png",
-      "bytes": 935027,
-      "sha256": "21f6f5fff70a1dfd47c87b268118436d4815cd00aeae743eb5d49b5c1a66bbb8"
+      "bytes": 89053,
+      "sha256": "9e30a17984153cdda5f5958e559b3e54505348ac2c07a2adfe5b9ff23cb5f919"
     },
     {
       "path": "assets/grade_style_references/high_art.png",
-      "bytes": 821611,
-      "sha256": "3d9ee9003d36cf46890286cc53d994f14037e22771b9792850ae1285b24877ae"
+      "bytes": 218970,
+      "sha256": "b024c2f2125fadebadde88795190e789a623e006e807bb6ffc42a5da467f07fb"
     },
     {
       "path": "assets/grade_style_references/middle.png",
-      "bytes": 917524,
-      "sha256": "0a72d81bba4992ce6bce2e183439e35b5d8df0ffd7479116b89523806eb81fb2"
+      "bytes": 91696,
+      "sha256": "59fa36fb13c267511aa52b1150691baf657a33e5120f806f20908783dedf3ca8"
     },
     {
       "path": "assets/grade_style_references/middle_art.png",
@@ -134,23 +134,23 @@
     },
     {
       "path": "assets/grade_style_references/primary.png",
-      "bytes": 1025161,
-      "sha256": "8de0ad0df8264751f3ec4d71746c29c15574ab6dc16d2b1a61fefce9c8ab0479"
+      "bytes": 88404,
+      "sha256": "df835ed4d949a224ebd971744ac0395bd7f28e6b67efd7444c7be5ae8b67b9e4"
     },
     {
       "path": "assets/grade_style_references/primary_art.png",
-      "bytes": 855594,
-      "sha256": "81961042c8826679cad1c27ea98309a07cbf4f59b149ac20d72df749c35e04b4"
+      "bytes": 247578,
+      "sha256": "c7b5faa1661d4ae3b16d7ef8e51788f20aed636ded1e69f4ae149a6011ed6903"
     },
     {
       "path": "assets/style_references/connector-light-01.png",
-      "bytes": 15009,
-      "sha256": "a39eb4c2cec8bf8cb5be1085834171e2b5ba4c10e29b78bae9ff2b593e311820"
+      "bytes": 129788,
+      "sha256": "b79a3d4bce2fea8790aedb9c7bccceb4cc6c7cf40603928798fd8e33e1c2dd4d"
     },
     {
       "path": "assets/style_references/connector-light-02.png",
-      "bytes": 15009,
-      "sha256": "b334aa6a206f0911c4b3e827f0f705aada6b6c416b5838b48bcd8c7b934da9d0"
+      "bytes": 159093,
+      "sha256": "e99b361730aee0b0437fa04de8cdbcb5b74613e96648ab2a96597f484afd0424"
     },
     {
       "path": "core/connector_system_v3.md",
@@ -304,8 +304,8 @@
     },
     {
       "path": "tools/validate_package.py",
-      "bytes": 7815,
-      "sha256": "4bd3259ab37e85e501d9a046a313105b6896dfff2615c8e6715cd83d590e5f28"
+      "bytes": 10052,
+      "sha256": "e2d6d92ce52c370afb5ead08940d2afc67673527d3f6a1bf7e2834b2db634a1c"
     }
   ],
   "distribution_note": "ZIP distribution: every distributable file is listed with its size and SHA-256, so validate_package.py --strict can verify the archive byte for byte. Local installation metadata is excluded. demo/ is repository-only presentation content and is excluded from the manifest."
