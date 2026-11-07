@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import argparse, hashlib, json, re
+import argparse, hashlib, json, re, struct, zlib
 
 parser = argparse.ArgumentParser()
 parser.add_argument('root', nargs='?', default='.')
@@ -35,6 +35,65 @@ required_files = [
 ]
 
 errors = []
+
+
+def validate_png(path):
+    """Reject PNGs with truncated chunks, bad CRCs or incomplete image streams."""
+    data = path.read_bytes()
+    signature = b'\x89PNG\r\n\x1a\n'
+    if not data.startswith(signature):
+        raise ValueError('invalid PNG signature')
+
+    offset = len(signature)
+    seen_ihdr = False
+    seen_idat = False
+    decoder = zlib.decompressobj()
+    while offset < len(data):
+        if offset + 8 > len(data):
+            raise ValueError('truncated PNG chunk header')
+        length = struct.unpack('>I', data[offset:offset + 4])[0]
+        chunk_type = data[offset + 4:offset + 8]
+        chunk_start = offset + 8
+        chunk_end = chunk_start + length
+        crc_end = chunk_end + 4
+        if crc_end > len(data):
+            raise ValueError(f'truncated {chunk_type.decode("ascii", "replace")} chunk')
+
+        chunk_data = data[chunk_start:chunk_end]
+        expected_crc = struct.unpack('>I', data[chunk_end:crc_end])[0]
+        actual_crc = zlib.crc32(chunk_type + chunk_data) & 0xffffffff
+        if actual_crc != expected_crc:
+            raise ValueError(f'{chunk_type.decode("ascii", "replace")} CRC mismatch')
+
+        if chunk_type == b'IHDR':
+            if offset != len(signature) or length != 13:
+                raise ValueError('invalid IHDR position or length')
+            width, height = struct.unpack('>II', chunk_data[:8])
+            if not width or not height:
+                raise ValueError('zero-sized image')
+            seen_ihdr = True
+        elif chunk_type == b'IDAT':
+            if not seen_ihdr:
+                raise ValueError('IDAT precedes IHDR')
+            decoder.decompress(chunk_data)
+            seen_idat = True
+        elif chunk_type == b'IEND':
+            if length != 0 or not seen_idat or not decoder.eof:
+                raise ValueError('incomplete image data or invalid IEND')
+            if crc_end != len(data):
+                raise ValueError('data follows IEND')
+            return
+
+        offset = crc_end
+
+    raise ValueError('missing IEND chunk')
+
+
+for png in (root / 'assets').rglob('*.png'):
+    try:
+        validate_png(png)
+    except Exception as e:
+        errors.append(f'invalid PNG {png.relative_to(root)}: {e}')
 
 
 def _ref_is_pattern(ref):

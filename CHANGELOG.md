@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- Repaired the packaged PNG references. The primary, middle and high full-card references were restored from the last valid Git version. Primary and high art-only references were rebuilt from the readable portions of their damaged files, while the valid middle art reference was retained. The Golden image was rebuilt from the matching Grade 3 C01 demo, and the two light-connector examples were recropped from the Grade 5 plant-parts demo. The package validator now checks PNG chunk CRCs and complete image data.
+
 ## 2.6.0 — Style prose vs style sample; labels off torsos; group-scene composition
 - **Cross-Agent reference gate:** every Stage 07 request must attach the audience-matched art-only reference image. Compiled prompts, base-asset metadata, approved manifests and QA now require reference path/SHA-256 and per-card attachment evidence; missing or mismatched attachments block approval. OpenAI, Doubao, Qwen Office, WorkBuddy and generic routing all inherit this rule.
 - Corrected the reference selection and WorkBuddy manifest examples to use `primary_art.png`, `middle_art.png` or `high_art.png`; the full card images are review references only.
