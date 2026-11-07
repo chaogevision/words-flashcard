@@ -108,9 +108,9 @@
       "sha256": "46471962eb4a3362ce043b47ecd456fbf6e4574808bdae25ab3f8474d197ff43"
     },
     {
-      "path": "assets/golden_set/G5A-C01-visual-reference.png",
-      "bytes": 4551767,
-      "sha256": "f8eed287c847d1bba25742eafdd8c61698a535d0000dd0d3093f76d05989bd4b"
+      "path": "assets/golden_set/G5A-C03-visual-reference.png",
+      "bytes": 3214390,
+      "sha256": "9ba6a253d08453123737f355ac17d2960e8457a7a5a60208ef57d90ff1d64acb"
     },
     {
       "path": "assets/golden_set/G5A-C20-visual-reference.png",
@@ -128,9 +128,9 @@
       "sha256": "4d58d17f1c4f42f7a0daf9ad031eb3fd160244fe0ee44fc26fb729fcf484684f"
     },
     {
-      "path": "assets/golden_set/G7A-C06-visual-reference.png",
-      "bytes": 2295561,
-      "sha256": "5d7680372847dfae6e6d6de06d4cdec2a7c1aebbb99fa05ff29f8a547d0d97a1"
+      "path": "assets/golden_set/G7A-C08-visual-reference.png",
+      "bytes": 1910764,
+      "sha256": "14f2613a7eac6207084aace2828f7f117d6c6dd61eb29c739369640eca0e0e8f"
     },
     {
       "path": "assets/golden_set/G7A-C11-visual-reference.png",
@@ -155,7 +155,7 @@
     {
       "path": "assets/golden_set/README.md",
       "bytes": 1989,
-      "sha256": "ea2b52eacf397e227e5d21f2719884074dd516c4de15ef76a33f89f39efd9f7a"
+      "sha256": "868d58551c8d1536a758b07eedcfa6b414589b96e9a6907744a0a5290c1638ba"
     },
     {
       "path": "assets/grade_style_references/high.png",

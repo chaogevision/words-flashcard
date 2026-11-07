@@ -9,8 +9,8 @@ The files under assets/grade_style_references serve a different purpose: primary
 | Band | Cards | Source review status |
 | --- | --- | --- |
 | Grade 3 | G3A-U01-C01-approved.png | Existing approved visual reference; restored from the valid local source PNG. |
-| Grade 5 | G5A-C01, G5A-C20, G5A-C24 | Selected from the local 30-card scene-card set. The source set is COMPOSED_CANDIDATE: coverage/layout checks passed, but teacher term-by-term review is still pending. Use these three for visual comparison only. |
-| Middle school | G7A-C02, G7A-C06, G7A-C11 | Selected from the local 72-card Grade 7 set. The deck is a delivery candidate; full-size card-by-card final review is not complete. Use these three for visual comparison only. |
+| Grade 5 | G5A-C03, G5A-C20, G5A-C24 | Selected from the local 30-card scene-card set. The source set is COMPOSED_CANDIDATE: coverage/layout checks passed, but teacher term-by-term review is still pending. Use these three for visual comparison only. |
+| Middle school | G7A-C02, G7A-C08, G7A-C11 | Selected from the local 72-card Grade 7 set. The deck is a delivery candidate; full-size card-by-card final review is not complete. Use these three for visual comparison only. |
 | High school | HB3-Unit1-C001, HB3-Unit3-C001, HB3-Unit5-C001 | Selected from the local Senior High English Compulsory Book 3 set. Its visual report records 96/96 cards approved. |
 
 ## Use
