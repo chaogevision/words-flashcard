@@ -10,7 +10,7 @@
     "assets",
     "tools"
   ],
-  "file_count_excluding_manifest": 59,
+  "file_count_excluding_manifest": 68,
   "files": [
     {
       "path": "ADAPTER_CONFORMANCE_CHECKLIST.md",
@@ -104,13 +104,58 @@
     },
     {
       "path": "assets/golden_set/G3A-U01-C01-approved.png",
-      "bytes": 7509,
-      "sha256": "e40c5e0002dff0a353be88a141a07422354e85aabf4cba660f71c13c9a268c4d"
+      "bytes": 2219251,
+      "sha256": "46471962eb4a3362ce043b47ecd456fbf6e4574808bdae25ab3f8474d197ff43"
+    },
+    {
+      "path": "assets/golden_set/G5A-C01-visual-reference.png",
+      "bytes": 4551767,
+      "sha256": "f8eed287c847d1bba25742eafdd8c61698a535d0000dd0d3093f76d05989bd4b"
+    },
+    {
+      "path": "assets/golden_set/G5A-C20-visual-reference.png",
+      "bytes": 3683630,
+      "sha256": "83d5765588f138e652bff878b4937fc09a61c218e3d7ef89076c244aa670e5c8"
+    },
+    {
+      "path": "assets/golden_set/G5A-C24-visual-reference.png",
+      "bytes": 4024511,
+      "sha256": "52dcfb099e427d23293130dee6cd363fc09945184233c2013ccafbe8d0ff5712"
+    },
+    {
+      "path": "assets/golden_set/G7A-C02-visual-reference.png",
+      "bytes": 1851106,
+      "sha256": "4d58d17f1c4f42f7a0daf9ad031eb3fd160244fe0ee44fc26fb729fcf484684f"
+    },
+    {
+      "path": "assets/golden_set/G7A-C06-visual-reference.png",
+      "bytes": 2295561,
+      "sha256": "5d7680372847dfae6e6d6de06d4cdec2a7c1aebbb99fa05ff29f8a547d0d97a1"
+    },
+    {
+      "path": "assets/golden_set/G7A-C11-visual-reference.png",
+      "bytes": 1921229,
+      "sha256": "3cb095a028657e05c61656d81b21dc8b476096318adceb0b2612b48bb0c9c3f4"
+    },
+    {
+      "path": "assets/golden_set/HB3-Unit1-C001-visual-reference.png",
+      "bytes": 4370879,
+      "sha256": "fde27caf61f887bc20c391940dae9e601799ca88833c08db914ab933cf909533"
+    },
+    {
+      "path": "assets/golden_set/HB3-Unit3-C001-visual-reference.png",
+      "bytes": 4171649,
+      "sha256": "c15555396b71a643157b87861c85381fbf08cd643fa0946b5d2964e5755154b8"
+    },
+    {
+      "path": "assets/golden_set/HB3-Unit5-C001-visual-reference.png",
+      "bytes": 3420666,
+      "sha256": "9c39cca032e5412e3971c5305096108acb3be9fe61f3f1b77e4307387d1e205a"
     },
     {
       "path": "assets/golden_set/README.md",
-      "bytes": 552,
-      "sha256": "ba988b1effcb615a2889646bb3939920e936b7048a05e08e6cec9a985405ff47"
+      "bytes": 1989,
+      "sha256": "ea2b52eacf397e227e5d21f2719884074dd516c4de15ef76a33f89f39efd9f7a"
     },
     {
       "path": "assets/grade_style_references/high.png",
