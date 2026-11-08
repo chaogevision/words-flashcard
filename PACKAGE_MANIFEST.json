@@ -54,8 +54,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11681,
-      "sha256": "943bfff7451b85032944f7aae1f020689311ad52620792656fdf71b3df85bb7f"
+      "bytes": 11781,
+      "sha256": "cbf16f17942eeb4f830d098b8acb001f705032fc10e74591ff2c3c0ac2104c9e"
     },
     {
       "path": "SKILL.md",
@@ -164,8 +164,8 @@
     },
     {
       "path": "assets/grade_style_references/high_art.png",
-      "bytes": 821611,
-      "sha256": "3d9ee9003d36cf46890286cc53d994f14037e22771b9792850ae1285b24877ae"
+      "bytes": 1028374,
+      "sha256": "eca414db98ddf78ee7b06bc056f58da8475c7994ff518b9f77b6e120b8b781f9"
     },
     {
       "path": "assets/grade_style_references/middle.png",
@@ -174,8 +174,8 @@
     },
     {
       "path": "assets/grade_style_references/middle_art.png",
-      "bytes": 726067,
-      "sha256": "cfe39703930f3c6f64addf13d3c718e50d6512b26294ad397b25b803beac3e72"
+      "bytes": 1345460,
+      "sha256": "cfc910e7cde7b7e812ac9e2f3e28b43b1916c1ea72f40de787e6c952f91c823b"
     },
     {
       "path": "assets/grade_style_references/primary.png",
@@ -184,8 +184,8 @@
     },
     {
       "path": "assets/grade_style_references/primary_art.png",
-      "bytes": 855594,
-      "sha256": "81961042c8826679cad1c27ea98309a07cbf4f59b149ac20d72df749c35e04b4"
+      "bytes": 1260350,
+      "sha256": "f15380c5f5daf816d72743bd95725c0867517e119780283c338881ae166fcee4"
     },
     {
       "path": "assets/style_references/connector-light-01.png",
@@ -229,8 +229,8 @@
     },
     {
       "path": "core/visual_spec.md",
-      "bytes": 5231,
-      "sha256": "9f3c6a9d795a5584e0f24b91bd6141b49be35ef1541d1c59962187b92c7dac5e"
+      "bytes": 5150,
+      "sha256": "5569505f366d05ac7b82779728b8c9e926675b7fa7f7b78e544753ee1a2c6ec2"
     },
     {
       "path": "core/workflow.md",

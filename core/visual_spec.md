@@ -18,16 +18,15 @@ Use curriculum grade or the user's stated audience to select age cues. Preserve 
 These are guidance, not rigid age stereotypes. Let the vocabulary group and teaching sense determine the scene. If the grade is unknown, keep the established batch style and ask only when age materially affects the scene.
 
 ## Style reference images
-`assets/grade_style_references/` ships one reference per school band:
-`primary.png`, `middle.png`, `high.png` (941x1672). They define the illustration
-family: medium, linework, palette, character rendering, light and level of detail.
+`assets/grade_style_references/` ships one full-scene art reference per school band:
+`primary_art.png`, `middle_art.png`, and `high_art.png` (640x960). Each is a
+standalone illustration with no flashcard labels or layout. They define the
+matching band's rendering family: medium, linework, palette, character rendering,
+light and level of detail.
 
-Each band also ships a `<band>_art.png` (640x960): the reference card's
-illustration area only, cropped to a 2:3 portrait window, with every heading, IPA
-row, word chip, example panel and decorative frame removed. **That is the only
-style-reference file to attach to the image model.** The full `<band>.png` card
-stays as an approval reference for label hierarchy and layout and must never be
-sent as the generation reference.
+**Attach only the matching `<band>_art.png` to the image model.** The complete
+`primary.png`, `middle.png`, and `high.png` cards stay as approval references for
+label hierarchy and layout; do not send them as generation references.
 
 **The reference is an input, not a description.** Stage 07 MUST attach the
 band-matching file as the image-model input (`image1`) and MUST ask the model to
