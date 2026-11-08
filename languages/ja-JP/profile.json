@@ -1,0 +1,24 @@
+{
+  "language": "ja",
+  "locale": "ja-JP",
+  "display_name": "Japanese",
+  "supported_regions": ["ja-JP"],
+  "writing_system": {
+    "scripts": ["Hani", "Hira", "Kana"],
+    "direction": "ltr",
+    "unicode_blocks": ["CJK Unified Ideographs", "Hiragana", "Katakana"],
+    "shaping": "basic"
+  },
+  "normalization": "NFC",
+  "term_wrap": "graphemes",
+  "reading": {
+    "display": "optional",
+    "default_system": "kana",
+    "romanization_default": false,
+    "notes": ["Keep source-provided kana readings as a separate label row.", "Do not infer a reading from kanji or substitute romaji for kana."]
+  },
+  "gloss": {"default_language": "zh-CN", "display": "required"},
+  "morphology": ["word_boundaries", "particles", "counters", "verb_and_adjective_inflection"],
+  "display_rules": ["Preserve source spelling and script mix.", "Use one horizontal target row and a separate optional kana-reading row; do not use generated furigana."],
+  "status": "preview"
+}

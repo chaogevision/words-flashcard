@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "token_set": "flashcard.visual.v2",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "canvas_reference": {
     "width": 1536,
     "height": 2048,
@@ -17,36 +17,49 @@
     "padding_ratio_y": 0.016
   },
   "typography": {
-    "english": {
+    "target_term": {
       "role": "dominant",
       "color": "#0E2B6D",
       "weight": "bold",
-      "preferred_size_px_at_1536w": [
-        60,
-        76
-      ],
+      "preferred_size_px_at_1536w": [60, 76],
+      "hard_min_px_at_1536w": 54,
+      "font_requirement": "full glyph coverage for the active target-language profile"
+    },
+    "pronunciation": {
+      "role": "secondary_optional",
+      "color": "#56677F",
+      "preferred_size_px_at_1536w": [32, 42],
+      "hard_min_px_at_1536w": 28,
+      "font_requirement": "full glyph coverage for the declared pronunciation system"
+    },
+    "gloss": {
+      "role": "secondary",
+      "color": "#333333",
+      "preferred_size_px_at_1536w": [32, 42],
+      "hard_min_px_at_1536w": 28,
+      "font_requirement": "full glyph coverage for the declared gloss language"
+    },
+    "english": {
+      "role": "legacy_alias_for_target_term",
+      "color": "#0E2B6D",
+      "weight": "bold",
+      "preferred_size_px_at_1536w": [60, 76],
       "hard_min_px_at_1536w": 54
     },
     "ipa": {
-      "role": "secondary",
+      "role": "legacy_alias_for_pronunciation",
       "color": "#56677F",
-      "preferred_size_px_at_1536w": [
-        32,
-        42
-      ],
-      "hard_min_px_at_1536w": 28,
-      "font_requirement": "full IPA glyph coverage"
+      "preferred_size_px_at_1536w": [32, 42],
+      "hard_min_px_at_1536w": 28
     },
     "chinese": {
-      "role": "secondary",
+      "role": "legacy_alias_for_chinese_gloss",
       "color": "#333333",
-      "preferred_size_px_at_1536w": [
-        32,
-        42
-      ],
-      "hard_min_px_at_1536w": 28,
-      "font_requirement": "CJK glyph coverage"
-    }
+      "preferred_size_px_at_1536w": [32, 42],
+      "hard_min_px_at_1536w": 28
+    },
+    "font_selection": "language-profile-and-adapter-resolved",
+    "render_normalization": "NFC; source strings remain unchanged"
   },
   "connector": {
     "token": "connector.v3.light",

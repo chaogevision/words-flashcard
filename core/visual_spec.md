@@ -1,7 +1,7 @@
 # Flashcard Visual Spec V2
 
 ## Stable card structure
-- Use the Primary English Flash Words multiword scene-card format at every grade: one coherent scene, related vocabulary targets, exact English/IPA/Chinese labels, and mapping-appropriate connectors.
+- Use the Primary multiword scene-card format at every grade and target language: one coherent scene, related vocabulary targets, exact target-language labels, optional source-backed pronunciation/reading, gloss labels, and mapping-appropriate connectors.
 - The illustration remains the visual focus; labels support it and connectors stay low-salience.
 - Do not add a topic title, grade label, top header, banner, or decorative frame unless the user explicitly requests one. The default card consists of the scene illustration plus the vocabulary labels and useful connectors.
 - Never import the Single Word Flash Cards one-word-per-card layout, example-sentence panel, related-word footer, or page chrome.
@@ -16,6 +16,13 @@ Use curriculum grade or the user's stated audience to select age cues. Preserve 
 | High school | Older teenage proportions, more mature academic or everyday settings, refined educational illustration, and a balanced, quieter palette. Avoid childish proportions and decorative motifs that make the scene feel intended for much younger children. |
 
 These are guidance, not rigid age stereotypes. Let the vocabulary group and teaching sense determine the scene. If the grade is unknown, keep the established batch style and ask only when age materially affects the scene.
+
+## Continuous scene and distributed label space
+- Keep the illustration as one connected scene that uses the full canvas. Do not reserve a continuous blank horizontal or vertical band, stripe, strip, panel, or banner for labels, especially across the center.
+- Do not place the character in one band and every vocabulary target in a second row below it. Integrate the visual targets into the same setting at varied heights, depths, and positions, following the actual actions and relationships.
+- Leave only small, irregular low-detail pockets where labels can fit naturally. Labels are placed after generation near their mapped targets; do not ask the image model to draw a shared label lane or large blank area.
+- Avoid an artificial straight divider or broad empty tabletop/wall strip that visually splits the scene. A natural horizon or furniture edge is acceptable only when it belongs to the depicted setting and does not become a label banner.
+- Compose each vocabulary label as a separate overlay in Stage 08. Never align all labels into one continuous banner.
 
 ## Style reference images
 `assets/grade_style_references/` ships one full-scene art reference per school band:
@@ -56,9 +63,9 @@ Rules:
 ## Label cards
 - white / light-warm rounded rectangle;
 - subtle shadow, no heavy border;
-- English: dominant, bold, deep navy;
-- IPA: secondary gray-blue;
-- Chinese gloss: secondary dark neutral;
+- target-language form: dominant, bold, deep navy;
+- optional pronunciation/reading: secondary gray-blue and labelled only when its notation needs clarification;
+- gloss: secondary dark neutral, rendered in a font that supports its declared script;
 - sufficient internal padding and line spacing;
 - long phrases enlarge/wrap the card rather than shrinking text excessively.
 
@@ -67,7 +74,7 @@ Rules:
 Connector must never become the visual protagonist. Keep labels clear of faces, hands, actions, and target objects.
 
 ## Base illustration rule
-Stage 07 contains no instructional English, IPA, Chinese, label cards, arrows, anchor dots or connector graphics. Do not bake in a card title, grade label, header, or decorative frame.
+Stage 07 contains no instructional text in any script, no target terms, readings, transliterations, translations, label cards, arrows, anchor dots or connector graphics. Do not bake in a card title, grade label, header, or decorative frame.
 
 ## Style consistency
 Use one stable illustration/rendering family per batch, while applying the age cues above. Keep the active `connector.v3.light` token and all deterministic teaching-text rules unchanged.

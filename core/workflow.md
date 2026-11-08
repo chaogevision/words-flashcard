@@ -3,11 +3,13 @@
 This document defines the platform-independent production lifecycle.
 
 ## Stage 01 — Parse Vocabulary
-Input: curriculum vocabulary source.
+Input: curriculum vocabulary source and, for a multilingual run, exactly one target-locale Language Profile.
 Output: `VocabularyMaster[]`.
 Rules:
-- preserve spelling, IPA, Chinese gloss, unit, page and intended sense;
-- use a stable curriculum identity key, preferably `grade + book + unit + term`;
+- preserve exact source spelling, script, locale, any supplied reading/pronunciation, gloss text/language, unit, page and intended sense;
+- use a stable curriculum identity key including target language and locale;
+- keep original Unicode source strings; NFC may be used only in the render layer;
+- stop if a required font glyph or shaping capability is missing;
 - never infer a corrected curriculum fact silently.
 
 ## Stage 02 — Validate Vocabulary
@@ -27,11 +29,12 @@ Create one `target_spec` per term with an explicit mapping mode and connector po
 
 ## Stage 05 — Layout Spec
 Define canvas, safe area, label zones, reading order, anchor targets and connector routing policy.
-Layout must anticipate labels; it must not treat labels as a late overlay after the scene is fixed.
+Layout must anticipate labels; it must not treat labels as a late overlay after the scene is fixed. Give every concrete target a scene-specific anchor and distribute label zones at varied heights; do not assign every anchor the same y-coordinate or line all labels into one row.
+Use small, irregular local label pockets around target relationships. Never solve crowding by reserving a shared full-width horizontal or vertical band in the illustration.
 
 ## Stage 06 — Prompt Compile
-Compile scene + layout + visual rules into a base-illustration request. Select the age-matched art-only style image, verify its file and SHA-256, and include it as an image input in the compiled request.
-Hard requirement: prompt explicitly forbids instructional English, IPA, Chinese, label cards and connector graphics.
+Compile scene + layout + visual rules into a base-illustration request. Select the audience-matched art-only style image, verify its file and SHA-256, and include it as an image input in the compiled request.
+Hard requirement: prompt explicitly forbids all instructional text, in every script, plus readings, glosses, label cards and connector graphics.
 Hard requirement: a prose description without the actual style image input is an invalid compilation.
 
 ## Stage 07 — Base Illustration
@@ -41,8 +44,9 @@ If the platform bakes labels or readable teaching text into the illustration, St
 If the image model cannot accept the style image, stop before generation. Record the reference path, SHA-256 and actual attachment status per card.
 
 ## Stage 08 — Deterministic Compose
-Render authoritative English, IPA, Chinese gloss, label cards and connector graphics deterministically.
+Render the authoritative target-language form, source-backed optional reading/pronunciation, gloss in its declared language, label cards and connector graphics deterministically.
 Generated pixels/OCR are never the authority for teaching text.
+Inspect the generated full-size scene before composing: update target anchors and subject/target protection boxes to match the actual image, then check that separate labels do not overlap faces, actions or targets or align into a banner-like row.
 
 ## Stage 09 — QA
 Run data, semantic, mapping, layout, connector, style and provenance QA.

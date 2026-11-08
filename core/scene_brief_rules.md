@@ -38,5 +38,5 @@ Before Stage 05:
 1. every term has one mapping mode;
 2. every term has one connector policy;
 3. abstract/function words are not forced onto arbitrary physical targets;
-4. composition leaves usable label space;
+4. composition leaves usable label space as small, irregular local pockets, not one shared full-width band;
 5. base illustration can be generated with zero teaching text.

@@ -2,9 +2,10 @@
 
 ## Hard QA dimensions
 ### Data QA
-- exact English string;
-- exact IPA when supplied;
-- exact Chinese gloss;
+- exact target-language source string;
+- exact source-provided reading/pronunciation and notation when supplied;
+- exact gloss and declared gloss language;
+- no missing glyphs, clipping, or normalization changes in stored source data;
 - correct curriculum identity/sense;
 - no duplicated/missing target.
 
@@ -21,6 +22,7 @@
 ### Layout QA
 - labels readable and inside safe area;
 - no label covers faces, hands, key actions or target objects;
+- declared `protected_regions` remain visible beneath no opaque label panel; connector endpoints are allowed inside the matching target region;
 - adequate padding and spacing;
 - no avoidable long connector geometry;
 - target count is appropriate for the layout template.
@@ -38,6 +40,8 @@
 - reference path is one of the packaged `<band>_art.png` files and its recorded SHA-256 matches the file;
 - style prose does not contradict the attached sample;
 - missing, unavailable, mismatched or unattached references block approval;
+- target-language support is production-valid only when the locale profile and active renderer's script capability are both validated;
+- a preview language profile can pass sample QA but cannot produce `APPROVED` status;
 - no pseudo-text/signage contamination;
 - no rendering-family drift;
 - no edge artifacts, blur blobs or unexplained shapes.

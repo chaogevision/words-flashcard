@@ -1,7 +1,9 @@
-# Agent Contract 1.1
+# Agent Contract 1.2
 
 ## 1. Purpose
 This contract defines what **any Agent** must read, produce, validate, and preserve to execute the flashcard Skill without relying on previous conversation history.
+
+For multilingual runs, the Agent must load exactly one matching `languages/<locale>/profile.json` in addition to this contract and the Core documents. The profile never replaces source truth or the active platform Adapter.
 
 The Agent may use any LLM, image generator, renderer, workflow engine, or file system, provided the observable inputs/outputs conform to this contract.
 
@@ -25,7 +27,7 @@ If `deterministic_compose` is unavailable, the Agent MUST stop before production
 ## 3. Canonical Stage Contract
 
 ### Stage 01 — Parse Vocabulary
-Input: curriculum source.
+Input: curriculum source and, for multilingual runs, one locale-matched Language Profile.
 Output: `VocabularyMaster` conforming to `schemas/vocabulary_master.schema.json` (each item conforms to `schemas/vocabulary.schema.json`).
 
 ### Stage 02 — Validate Vocabulary
@@ -45,17 +47,18 @@ Gate: one target spec per vocabulary term.
 ### Stage 05 — Layout Spec
 Input: SceneBrief.
 Output: `LayoutSpec` conforming to `schemas/layout_spec.schema.json`.
-Gate: explicit label zones and connector policies.
+Gate: explicit label zones and connector policies. Distribute separate labels around their mapped targets; do not define one shared full-width label band.
 
 ### Stage 06 — Prompt Compile
 Input: SceneBrief + LayoutSpec + visual rules.
 Output: `CompiledPrompt` conforming to `schemas/compiled_prompt.schema.json`.
-Gate: prompt forbids instructional typography and records the grade-matched art-only reference path and SHA-256.
+Gate: prompt forbids instructional typography in every script and records the grade-matched art-only reference path and SHA-256.
 
 ### Stage 07 — Base Illustration
 Input: CompiledPrompt plus the referenced style image attached to the actual image-generation request.
 Output: one base illustration image + metadata conforming to `schemas/base_asset.schema.json`.
-Hard rule: zero instructional English / IPA / Chinese / label cards / connector graphics.
+Hard rule: zero instructional text in any script, no readings or glosses, no label cards and no connector graphics.
+Composition rule: one connected scene across the canvas; do not reserve a full-width horizontal or vertical blank band for labels. Use only small, irregular low-detail pockets and vary target positions naturally.
 Hard gate: record `style_reference_attached: true` only when the actual Stage 07 request included the matching image. If image-reference input is unavailable or omitted, stop with `STYLE_REFERENCE_UNAVAILABLE` or `STYLE_REFERENCE_NOT_ATTACHED`; do not advance to `GENERATED` or `APPROVED`.
 
 ### Stage 08 — Deterministic Compose
@@ -121,12 +124,16 @@ Minimum standard error codes:
 - `STYLE_REFERENCE_NOT_ATTACHED`
 - `STYLE_REFERENCE_MISMATCH`
 - `COMPOSER_UNAVAILABLE`
+- `LANGUAGE_PROFILE_UNKNOWN`
+- `LANGUAGE_PROFILE_UNVALIDATED`
+- `TEXT_SHAPING_UNAVAILABLE`
+- `FONT_GLYPH_MISSING`
 
 ## 7. Determinism Boundary
 The following must be deterministic for production approval:
-- exact English string
-- exact IPA string when supplied
-- exact Chinese gloss
+- exact source target-language string
+- exact supplied reading/pronunciation and notation when present
+- exact source gloss and gloss language
 - card ID / vocabulary identity
 - label/connector style token selection
 - selected style-reference path and SHA-256

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chaogevision.github.io/words-flashcard/schemas/language_profile.schema.json",
+  "title": "FlashcardLanguageProfile",
+  "type": "object",
+  "required": ["language", "locale", "display_name", "writing_system", "normalization", "term_wrap", "reading", "gloss", "morphology", "status"],
+  "properties": {
+    "language": {"type": "string", "pattern": "^[a-z]{2,3}$"},
+    "locale": {"type": "string", "pattern": "^[a-z]{2,3}(-[A-Z0-9]{2,8})*$"},
+    "display_name": {"type": "string", "minLength": 1},
+    "supported_regions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "writing_system": {
+      "type": "object",
+      "required": ["scripts", "direction", "unicode_blocks", "shaping"],
+      "properties": {
+        "scripts": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "direction": {"enum": ["ltr", "rtl", "vertical"]},
+        "unicode_blocks": {"type": "array", "items": {"type": "string"}},
+        "shaping": {"enum": ["basic", "complex", "bidi"]}
+      },
+      "additionalProperties": false
+    },
+    "normalization": {"const": "NFC"},
+    "term_wrap": {"enum": ["latin_words", "graphemes"]},
+    "reading": {
+      "type": "object",
+      "required": ["display", "default_system", "romanization_default"],
+      "properties": {
+        "display": {"enum": ["optional", "required", "none"]},
+        "default_system": {"type": "string"},
+        "romanization_default": {"type": "boolean"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "gloss": {
+      "type": "object",
+      "required": ["default_language", "display"],
+      "properties": {
+        "default_language": {"type": "string"},
+        "display": {"enum": ["required", "optional"]}
+      },
+      "additionalProperties": false
+    },
+    "morphology": {"type": "array", "items": {"type": "string"}},
+    "display_rules": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["preview", "validated"]}
+  },
+  "additionalProperties": false
+}

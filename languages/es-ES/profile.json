@@ -1,0 +1,24 @@
+{
+  "language": "es",
+  "locale": "es-ES",
+  "display_name": "Spanish",
+  "supported_regions": ["es-ES", "es-419", "es-MX", "es-AR"],
+  "writing_system": {
+    "scripts": ["Latn"],
+    "direction": "ltr",
+    "unicode_blocks": ["Basic Latin", "Latin-1 Supplement", "Latin Extended-A"],
+    "shaping": "basic"
+  },
+  "normalization": "NFC",
+  "term_wrap": "latin_words",
+  "reading": {
+    "display": "optional",
+    "default_system": "IPA",
+    "romanization_default": false,
+    "notes": ["Show IPA only when supplied or separately verified."]
+  },
+  "gloss": {"default_language": "zh-CN", "display": "required"},
+  "morphology": ["grammatical_gender", "articles", "agreement", "verb_inflection", "regional_lexicon"],
+  "display_rules": ["Preserve accents, ñ, opening punctuation and locale-specific spelling.", "Use the source locale when it is known; otherwise keep regional forms unresolved for review."],
+  "status": "preview"
+}

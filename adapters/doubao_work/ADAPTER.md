@@ -1,4 +1,4 @@
-# Doubao Work Adapter — compatible with Skill V2.3.0
+# Doubao Work Adapter — compatible with Skill V2.7.0
 
 ## Purpose
 Adapt the Agent-Agnostic flashcard production protocol to observed Doubao Work behavior.
@@ -15,6 +15,8 @@ This adapter exists because Doubao Work tends to:
 
 The Core Skill rules remain authoritative. This adapter only changes execution and layout thresholds for Doubao Work.
 
+For multilingual runs, load exactly one locale-matched Language Profile. Use its source-backed text and script rules with this adapter's platform-specific rendering thresholds; do not merge other platform fixes into the run.
+
 ---
 
 ## 1. Production Architecture — Mandatory
@@ -22,7 +24,7 @@ The Core Skill rules remain authoritative. This adapter only changes execution a
 Doubao Work MUST follow the same two-layer architecture:
 
 1. Stage 07: generate **base illustration only**.
-2. Stage 08: deterministic composition of word / IPA / Chinese / label card / connector.
+2. Stage 08: deterministic composition of target-language form / optional source-backed reading / gloss / label card / connector.
 
 The final teaching text MUST NOT be trusted to the image generator.
 
@@ -48,17 +50,17 @@ No label card may touch or visually merge with the canvas edge.
 
 Doubao's default label cards are too small. Stage 08 MUST use the following minimum visual scale.
 
-### English word
+### Target-language form
 - preferred: 60–76 px on 1536×2048
 - hard minimum: 54 px
 - bold, deep navy
 - do not shrink below minimum to fit long words
 
-### IPA
+### Optional reading / pronunciation
 - preferred: 34–42 px
 - hard minimum: 30 px
 
-### Chinese gloss
+### Gloss in its declared language
 - preferred: 34–42 px
 - hard minimum: 30 px
 
@@ -68,7 +70,7 @@ Choose by density rather than one fixed size:
 - normal word: width 330–430 px, height 165–220 px
 - long phrase/proper noun: width 420–600 px, height 175–245 px
 
-For long English terms, enlarge or wrap the card. Never solve fit by making all typography tiny.
+For long target-language terms, use the active profile's wrapping rule, enlarge or wrap the card. Never solve fit by making all typography tiny.
 
 ### Padding
 - horizontal internal padding: >= 28 px
@@ -82,8 +84,8 @@ Use the Core V2 label system:
 - white / warm-white rounded rectangle
 - soft shadow
 - no heavy border
-- deep navy English
-- subordinate IPA and Chinese
+- deep navy target-language form
+- subordinate optional reading and gloss
 
 ### Accent-bar override
 Observed Doubao output adds random blue/red vertical bars.
@@ -149,7 +151,7 @@ For each target:
 
 Direct/action labels may float nearer the subject instead of staying at extreme corners.
 
-Context labels (`scene_state`, `dialogue_phrase`, `timeline_segment`, `comparison_zone`) use no connector and may occupy a clean context band.
+Context labels (`scene_state`, `dialogue_phrase`, `timeline_segment`, `comparison_zone`) use no connector and may occupy a nearby low-detail context pocket. Do not collect them into one continuous banner or full-width strip.
 
 ---
 
@@ -237,8 +239,8 @@ Add these checks to Stage 09:
 
 ### `DOUBAO_LABEL_TOO_SMALL`
 Fail when:
-- English < 54 px on 1536×2048;
-- IPA or Chinese < 30 px;
+- target-language form < 54 px on 1536×2048;
+- optional reading or gloss < 30 px;
 - card padding is visibly cramped.
 
 ### `DOUBAO_CONNECTOR_TOO_LONG`

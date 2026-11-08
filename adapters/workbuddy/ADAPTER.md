@@ -1,4 +1,4 @@
-# WorkBuddy Adapter — compatible with Skill V2.6.0
+# WorkBuddy Adapter — compatible with Skill V2.7.0
 
 ## Purpose
 Adapt the agent-agnostic flashcard protocol to the observed behavior of
@@ -25,6 +25,12 @@ hard QA gates, lifecycle semantics or the active visual tokens.
 
 `deterministic_compose` is available, so Stage 08 is mandatory and no card may
 be approved from a generated mockup.
+
+For multilingual runs, load exactly one `languages/<locale>/profile.json` and
+use `tools/compose_multilingual_cards.py` plus `tools/qa_multilingual_cards.py`.
+The profile selects text wrapping and script requirements; this adapter selects
+WorkBuddy's generation and layout thresholds. A profile still marked `preview`
+may produce review samples but cannot produce `APPROVED` cards.
 
 ---
 
@@ -73,28 +79,29 @@ Every rule below exists because one of those defects was observed.
    the prose may claim, never a replacement for it.
 3. One `ImageGen` call produces exactly one card. Never batch several cards into
    one prompt.
-4. The prompt MUST forbid English teaching text, IPA, Chinese, label cards,
+4. The prompt MUST forbid all instructional text in every script, including target-language forms, readings, transliterations, glosses, signs and labels; also forbid label cards,
    arrows, dots, frame and border, **and white halo / sticker outline / cutout
    fringe** (observed halo around hair and shoulders in an earlier batch).
-5. The prompt MUST ask for the main subject inside the central ~60% of the frame,
-   leaving the outer band visually quiet. Labels live in that band.
-5b. **Reserve a calm band at the TOP, not only at the sides.** A connector's length
-   is normalised by canvas width while vertical space costs 1.5x less per unit, so
-   one clear stretch of wall above the heads is worth more than two narrow side
-   strips. Ask for "the group in the lower two thirds, the top quarter calm empty
-   wall". Measured: a 5-person row whose heads started at y=0.10 could not be
-   labelled inside the ceiling at any label width; the same row starting at y=0.40
-   placed all five labels in the wall with every connector under 0.26 W.
-5c. **Five or more people need a staggered arrangement.** One flat row leaves no
-   gap wide enough for a 0.24 W card. Ask for two staggered rows (adults behind,
-   children in front, each standing in a gap) and for visible wall between heads.
+5. Keep the full illustration as one connected scene. Do not reserve a continuous
+   horizontal or vertical band, stripe, strip or banner for labels, including at
+   the top or center; do not place all targets in one row beneath a blank lane.
+   Labels are positioned after generation near their mapped targets.
+5b. Keep only small, irregular low-detail pockets in natural parts of the scene.
+   Distribute targets through varied heights and depths, protecting faces, hands,
+   actions and target objects. A natural wall, sky or floor can stay quieter, but
+   must not become one continuous label lane across the canvas.
+5c. **Five or more people need a non-linear arrangement.** Use a natural cluster
+   with varied heights and depths rather than a flat row; preserve visible gaps
+   between people so each figure remains identifiable without creating a blank
+   horizontal band.
 5d. **Say it is full-bleed.** Attaching a 2:3 sample to a 2:3 canvas still produced
    a 12% paper margin on every side plus a drop shadow (the model read the sample as
    a framed artwork). Add: "the painting fills the whole canvas edge to edge; no
    white margin, no paper border, no mat, no inset card, no drop shadow". After that
    clause, 8 of 8 bases came back with zero border trim.
-6. Reject a base whose subject intrudes into the perimeter band, or whose edges
-   carry a white fringe: regenerate rather than patch at compose time.
+6. Reject a base that contains a broad artificial blank stripe/panel dividing the
+   scene or whose edges carry a white fringe: regenerate rather than patch at
+   compose time. Do not reject a natural horizon that belongs to the setting.
 7. **Crop the generator watermark band before compose** (`crop_bottom_px` in the
    run config, 116 px at 1536 width, 77 px at 1024 width). Never cover it with a
    label card.
@@ -116,14 +123,16 @@ Typography (from `core/design_tokens.json`, scaled by `width / 1536`):
 
 | role | preferred | hard minimum |
 |---|---|---|
-| English | 76 px | 54 px |
-| IPA | 42 px | 28 px |
-| Chinese | 42 px | 28 px |
+| target-language form | 76 px | 54 px |
+| optional reading / pronunciation | 42 px | 28 px |
+| gloss in its declared language | 42 px | 28 px |
 
 Label cards: warm white `#FFFDF9` at 98%, radius 0.018 × width, hairline navy
 outline at ~6% alpha, soft shadow, padding 0.024 / 0.016 × width, and a hard
-width cap of **34% of canvas width**. Wrap Latin text on spaces and CJK text on
-characters; never shrink below the hard minimum to force a fit.
+width cap of **34% of canvas width**. Use the active Language Profile's wrapping
+rule and a font that covers every rendered glyph; never shrink below the hard
+minimum to force a fit. Missing glyph coverage or required shaping fails the
+card with `FONT_GLYPH_MISSING` or `TEXT_SHAPING_UNAVAILABLE`.
 
 ### 4.1 Connector ceiling — hard requirement
 
@@ -214,7 +223,7 @@ Additive checks on top of `core/qa_rules.md`:
 - no label-rect overlap;
 - no base asset narrower than 1536 px;
 - no upscale above 1.4×;
-- every rendered string equals the curriculum string byte for byte;
+- every rendered target form, reading and gloss equals the corresponding source field exactly; display-only NFC normalization must not modify source records;
 - watermarked base assets are rejected;
 - base assets narrower than 1536 px fail the gate (the 8-card reference batch
   fails exactly here, by design — those bases were 1024 px);

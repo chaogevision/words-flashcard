@@ -1,4 +1,4 @@
-# Qwen Office Adapter — compatible with Skill V2.3.0
+# Qwen Office Adapter — compatible with Skill V2.7.0
 
 ## Purpose
 Adapt the Agent-Agnostic flashcard production protocol to observed **Qwen Office / 千问办公** behavior.
@@ -18,6 +18,8 @@ Qwen Office is generally stronger than the observed Doubao Work output in label 
 
 The Core Skill remains authoritative. This adapter may tighten routing, grouping, layout, connector, and QA thresholds, but MUST NOT weaken Core hard gates.
 
+For multilingual runs, load exactly one locale-matched Language Profile in addition to Core. If Qwen Office cannot render all declared glyphs or required text shaping, stop with an explicit capability error rather than substituting romanization or dropping marks.
+
 ---
 
 ## 1. Mandatory Production Architecture
@@ -25,14 +27,12 @@ The Core Skill remains authoritative. This adapter may tighten routing, grouping
 Qwen Office MUST follow the Core two-layer architecture:
 
 1. **Stage 07 — Base Illustration Only**
-   - no English teaching text
-   - no IPA
-   - no Chinese gloss
+   - no instructional text in any script, including target terms, readings, transliterations or glosses
    - no label cards
    - no connector lines or dots
 
 2. **Stage 08 — Deterministic Compose**
-   - authoritative English / IPA / Chinese from curriculum source
+   - authoritative target-language form, optional source-backed reading and declared-language gloss
    - label cards from design tokens
    - connector geometry from LayoutSpec + `connector.v3.light`
 
@@ -195,15 +195,15 @@ Observed Qwen labels are generally more readable than Doubao labels. Do NOT blin
 
 For a 1536 × 2048 portrait canvas, recommended ranges:
 
-### English
+### Target-language form
 - preferred: 60–76 px
 - hard minimum: 54 px
 
-### IPA
+### Optional reading / pronunciation
 - preferred: 32–40 px
 - hard minimum: 28 px
 
-### Chinese
+### Gloss in its declared language
 - preferred: 32–40 px
 - hard minimum: 28 px
 

@@ -4,12 +4,14 @@ A new Agent/Adapter is production-ready only when all boxes pass.
 
 ## Capability
 - [ ] Can read curriculum/source files.
+- [ ] Loads exactly one locale-matched Language Profile for a multilingual run.
 - [ ] Can write structured JSON artifacts.
 - [ ] Can generate one base illustration per card.
 - [ ] Can attach the band-matched art-only style reference to every Stage 07 request and record the actual per-card attachment, path and SHA-256.
 - [ ] Blocks Stage 07 when the image-generation path cannot accept a reference image.
 - [ ] Can inspect images for semantic/style QA.
 - [ ] Can render deterministic text/labels/connectors OR hand off to a deterministic renderer.
+- [ ] Fails closed when required script shaping or font glyph coverage is missing.
 
 ## Contract
 - [ ] Declares a unique platform/adapter ID.
@@ -25,12 +27,12 @@ A new Agent/Adapter is production-ready only when all boxes pass.
 - [ ] Produces zero instructional typography.
 - [ ] Uses a matching art-only reference image; a prose-only style description cannot pass.
 - [ ] Preserves required visual targets.
-- [ ] Leaves label-safe perimeter space.
+- [ ] Leaves small, irregular label-safe pockets near mapped targets; does not reserve a continuous horizontal or vertical label band.
 
 ## Stage 08
-- [ ] Renders English from source data.
-- [ ] Renders IPA from source data with full glyph coverage.
-- [ ] Renders Chinese from source data.
+- [ ] Renders the exact target-language form from source data.
+- [ ] Renders an optional reading/pronunciation only when source-backed, with full glyph coverage.
+- [ ] Renders the gloss in its declared language from source data.
 - [ ] Uses `connector.v3.light` only.
 - [ ] Uses no connector where policy is `none`.
 - [ ] Uses no red/orange/yellow anchor beads.

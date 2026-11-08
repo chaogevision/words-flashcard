@@ -1,0 +1,24 @@
+{
+  "language": "de",
+  "locale": "de-DE",
+  "display_name": "German",
+  "supported_regions": ["de-DE", "de-AT", "de-CH"],
+  "writing_system": {
+    "scripts": ["Latn"],
+    "direction": "ltr",
+    "unicode_blocks": ["Basic Latin", "Latin-1 Supplement", "Latin Extended-A"],
+    "shaping": "basic"
+  },
+  "normalization": "NFC",
+  "term_wrap": "latin_words",
+  "reading": {
+    "display": "optional",
+    "default_system": "IPA",
+    "romanization_default": false,
+    "notes": ["Show IPA only when supplied or separately verified."]
+  },
+  "gloss": {"default_language": "zh-CN", "display": "required"},
+  "morphology": ["grammatical_gender", "articles", "noun_capitalization", "compound_words", "case_and_inflection"],
+  "display_rules": ["Preserve ä, ö, ü and ß exactly.", "Keep the noun's source capitalization and do not split compounds with invented hyphens.", "Display an article only when it is part of source data or explicitly enabled in the reviewed profile."],
+  "status": "preview"
+}

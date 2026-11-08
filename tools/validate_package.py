@@ -8,7 +8,7 @@ parser.add_argument('--strict', action='store_true')
 args = parser.parse_args()
 root = Path(args.root).resolve()
 
-required_dirs = ['core', 'engine', 'schemas', 'adapters', 'assets', 'tools']
+required_dirs = ['core', 'engine', 'schemas', 'adapters', 'assets', 'tools', 'languages']
 required_files = [
     'SKILL.md', 'AGENT_CONTRACT.md', 'ADAPTER_ROUTING.md', 'PACKAGE_MANIFEST.json',
     'core/workflow.md', 'core/source_truth.md', 'core/grouping_rules.md', 'core/scene_brief_rules.md',
@@ -21,10 +21,16 @@ required_files = [
     'schemas/compiled_prompt.schema.json', 'schemas/base_asset.schema.json',
     'schemas/qa_report.schema.json', 'schemas/repair_action.schema.json',
     'schemas/manifest.schema.json', 'schemas/run_state.schema.json',
+    'schemas/language_profile.schema.json',
     'adapters/generic/ADAPTER_TEMPLATE.md', 'adapters/openai/ADAPTER.md',
     'adapters/doubao_work/ADAPTER.md', 'adapters/qwen_office/ADAPTER.md',
     'adapters/workbuddy/ADAPTER.md',
     'tools/compose_cards.py', 'tools/qa_check.py',
+    'tools/compose_multilingual_cards.py', 'tools/qa_multilingual_cards.py',
+    'languages/README.md',
+    'languages/ja-JP/profile.json', 'languages/fr-FR/profile.json',
+    'languages/de-DE/profile.json', 'languages/ko-KR/profile.json',
+    'languages/es-ES/profile.json',
     'assets/golden_set/README.md', 'assets/golden_set/G3A-U01-C01-approved.png',
     'assets/grade_style_references/primary.png',
     'assets/grade_style_references/middle.png',
@@ -156,6 +162,11 @@ if args.strict:
             'schemas/card_plan_set.schema.json',
             'schemas/card_plan.schema.json',
         )
+        profile_schema = json.loads((root / 'schemas/language_profile.schema.json').read_text(encoding='utf-8'))
+        for profile_path in (root / 'languages').glob('*/profile.json'):
+            Draft202012Validator(profile_schema).validate(
+                json.loads(profile_path.read_text(encoding='utf-8'))
+            )
     except ImportError:
         pass
     except Exception as e:

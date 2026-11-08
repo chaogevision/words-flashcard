@@ -2,15 +2,46 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "VocabularyItem",
   "type": "object",
-  "required": ["id","unit","term","chinese"],
+  "required": ["id","unit","term"],
+  "anyOf": [
+    {"required": ["chinese"]},
+    {"required": ["gloss"]}
+  ],
   "properties": {
     "id": {"type": "string","minLength": 1},
     "grade": {"type": ["string","null"]},
     "book": {"type": ["string","null"]},
     "unit": {"type": "string","minLength": 1},
-    "term": {"type": "string","minLength": 1},
+    "term": {"type": "string","minLength": 1,"description": "Exact target-language form from the supplied source."},
+    "target_language": {"type": "string","pattern": "^[a-z]{2,3}(-[A-Z0-9]{2,8})*$"},
+    "display_form": {"type": "string","minLength": 1},
+    "lemma": {"type": ["string","null"]},
     "ipa": {"type": ["string","null"]},
-    "chinese": {"type": "string","minLength": 1},
+    "reading": {"type": ["string","null"]},
+    "pronunciation": {
+      "type": ["object","null"],
+      "required": ["system","value"],
+      "properties": {
+        "system": {"type": "string","minLength": 1},
+        "value": {"type": "string","minLength": 1},
+        "source_ref": {"type": ["string","null"]},
+        "status": {"enum": ["source_provided","verified","unverified"]}
+      },
+      "additionalProperties": true
+    },
+    "gloss": {
+      "type": "object",
+      "required": ["language","text"],
+      "properties": {
+        "language": {"type": "string","pattern": "^[a-z]{2,3}(-[A-Z0-9]{2,8})*$"},
+        "text": {"type": "string","minLength": 1},
+        "source_ref": {"type": ["string","null"]},
+        "status": {"enum": ["source_provided","verified","unverified"]}
+      },
+      "additionalProperties": true
+    },
+    "chinese": {"type": "string","minLength": 1,"description": "Legacy Chinese gloss field; retained for English-package compatibility."},
+    "grammar": {"type": "object","additionalProperties": true},
     "page": {"type": ["string","integer","null"]},
     "sense_id": {"type": ["string","null"]},
     "source_ref": {"type": ["string","null"]},

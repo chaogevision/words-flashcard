@@ -23,6 +23,8 @@ Later layers may tighten execution details but may not weaken earlier hard rules
 | WorkBuddy | `adapters/workbuddy/ADAPTER.md` |
 | Unknown/generic Agent | `adapters/generic/ADAPTER_TEMPLATE.md` until a tested adapter exists |
 
+For a multilingual run, load exactly one locale-matched `languages/<locale>/profile.json` in addition to the platform Adapter. A language profile governs text/script facts; a platform Adapter governs tool and runtime mechanics. Neither may weaken the shared Core gates.
+
 ## Important behavior
 Do NOT merge every platform's corrective rules into one giant prompt.
 
@@ -44,12 +46,16 @@ All platforms still use:
 - Core mapping modes;
 - hard QA approval gate.
 
+The style reference is selected by learner audience, never by target language. Every capable Agent must attach the actual matching `*_art.png` image on each Stage 07 request. If the platform cannot accept the image or render the declared script, stop before approval and record the exact capability error.
+
 ## Adapter identification
 At the beginning of a production run, write the following into the run manifest:
 
 ```json
 {
-  "skill_version": "2.6.0",
+  "skill_version": "2.7.0",
+  "target_language": "fr-FR",
+  "language_profile": "languages/fr-FR/profile.json",
   "platform": "qwen_office",
   "adapter": "adapters/qwen_office/ADAPTER.md",
   "visual_spec": "Flashcard Visual Spec V2",

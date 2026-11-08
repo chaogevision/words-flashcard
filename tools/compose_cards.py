@@ -51,6 +51,7 @@ import json
 import math
 import os
 import sys
+import unicodedata
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
@@ -158,15 +159,45 @@ def fit_size(draw, text, path, max_w, hi, lo, index, wrap, max_lines):
 
 
 # ---------------------------------------------------------------- label layout
-def make_label(draw, label, max_w, scale, tok):
+def wrap_for_mode(draw, text, font, max_w, mode):
+    if mode == "graphemes":
+        return wrap_cjk(draw, text, font, max_w)
+    return wrap_latin(draw, text, font, max_w)
+
+
+def fit_target(draw, text, path, max_w, hi, lo, mode):
+    size = hi
+    while size > lo:
+        f = ImageFont.truetype(path, size)
+        lines = wrap_for_mode(draw, text, f, max_w, mode)
+        if max(text_w(draw, line, f) for line in lines) <= max_w:
+            return f
+        size -= 2
+    return ImageFont.truetype(path, lo)
+
+
+def make_label(draw, label, max_w, scale, tok, fonts):
     pad_x, pad_y = int(tok["pad_x_ratio"] * 2048 * scale), int(tok["pad_y_ratio"] * 2048 * scale)
     inner = max_w - pad_x * 2
-    f_en = fit_latin(draw, label["english"], DEFAULTS["fonts"]["english"],
-                     inner, int(tok["en_size"][0] * scale), int(tok["en_size"][1] * scale))
-    en = wrap_latin(draw, label["english"], f_en, inner)
-    f_ip, ip = fit_size(draw, label.get("ipa") or "", DEFAULTS["fonts"]["ipa"], inner,
-                        int(tok["ipa_size"][0] * scale), int(tok["ipa_size"][1] * scale),
-                        None, wrap_latin, 2)
+    target_text = unicodedata.normalize("NFC", label["english"])
+    target_wrap_mode = label.get("wrap_mode", "latin_words")
+    target_font = fonts.get("target", fonts["english"])
+    reading_font = fonts.get("pronunciation", fonts["ipa"])
+    f_en = fit_target(draw, target_text, target_font,
+                      inner, int(tok.get("target_size", tok["en_size"])[0] * scale),
+                      int(tok.get("target_size", tok["en_size"])[1] * scale), target_wrap_mode)
+    en = wrap_for_mode(draw, target_text, f_en, inner, target_wrap_mode)
+    reading_text = unicodedata.normalize("NFC", label.get("ipa") or "")
+    if reading_text:
+        f_ip, ip = fit_size(draw, reading_text, reading_font, inner,
+                            int(tok["ipa_size"][0] * scale), int(tok["ipa_size"][1] * scale),
+                            None, wrap_latin, 2)
+    else:
+        # Profiles may intentionally omit pronunciation (for example, when it
+        # was not supplied with the source vocabulary). Do not ask the wrapper
+        # to lay out an empty string; Pillow's word wrapper returns no lines.
+        f_ip = ImageFont.truetype(reading_font, max(1, int(tok["ipa_size"][1] * scale)))
+        ip = []
     return {
         "pad_x": pad_x, "pad_y": pad_y,
         "en": en, "f_en": f_en, "en_lh": int(f_en.size * 1.16),
@@ -178,9 +209,12 @@ def make_label(draw, label, max_w, scale, tok):
 
 def finish_cn(draw, label, lb, scale, tok, cn_path, cn_index):
     inner = lb["_inner"]
-    f, lines = fit_size(draw, label["chinese"], cn_path, inner,
+    gloss_text = unicodedata.normalize("NFC", label["chinese"])
+    gloss_mode = label.get("gloss_wrap_mode", "graphemes")
+    gloss_wrap = wrap_cjk if gloss_mode == "graphemes" else wrap_latin
+    f, lines = fit_size(draw, gloss_text, cn_path, inner,
                         int(tok["cn_size"][0] * scale), int(tok["cn_size"][1] * scale),
-                        cn_index, wrap_cjk, 3)
+                        cn_index, gloss_wrap, 3)
     lb["cn"], lb["f_cn"], lb["cn_lh"] = lines, f, int(f.size * 1.34)
     content = max(max(text_w(draw, l, lb["f_en"]) for l in lb["en"]),
                   max([text_w(draw, l, lb["f_ip"]) for l in lb["ip"]] or [0]),
@@ -353,9 +387,21 @@ def compose_card(card, cfg, out_report):
         subject_rects.append(inflate([b[0] * W, b[1] * H, b[2] * W, b[3] * H],
                                      0.012 * W, 0.010 * W))
 
+    # Important illustrated objects can also be protected from label cards.
+    # Their connectors still point into these regions; only the opaque label
+    # panels are kept clear so the learning target remains visible.
+    protected_rects = []
+    for b in (card.get("protected_regions") or []):
+        protected_rects.append(inflate([b[0] * W, b[1] * H, b[2] * W, b[3] * H],
+                                       0.006 * W, 0.006 * W))
+
     def subject_hit(r):
         area = max(1.0, (r[2] - r[0]) * (r[3] - r[1]))
         return sum(overlap(r, s) for s in subject_rects) / area
+
+    def protected_hit(r):
+        area = max(1.0, (r[2] - r[0]) * (r[3] - r[1]))
+        return sum(overlap(r, s) for s in protected_rects) / area
 
     # ---- busyness map: a label card belongs on calm background, not on a torso
     # Edge energy is a cheap, style-independent proxy for "something is drawn
@@ -382,8 +428,10 @@ def compose_card(card, cfg, out_report):
     max_lw = int(cfg["max_label_width_ratio"] * W)
     labels = []
     for lb in card["labels"]:
-        lab = make_label(probe, lb, max_lw, scale, tok)
-        finish_cn(probe, lb, lab, scale, tok, cn_cfg["chinese"], cn_cfg.get("chinese_index", 0))
+        lab = make_label(probe, lb, max_lw, scale, tok, cn_cfg)
+        gloss_path = cn_cfg.get("gloss", cn_cfg["chinese"])
+        gloss_index = cn_cfg.get("gloss_index", cn_cfg.get("chinese_index", 0))
+        finish_cn(probe, lb, lab, scale, tok, gloss_path, gloss_index)
         labels.append({"spec": lb, "lb": lab})
 
     # ---- target-first placement: a label may sit on the global grid *or* on a
@@ -456,6 +504,9 @@ def compose_card(card, cfg, out_report):
         hit = subject_hit(r)
         if hit > 0.0:
             cost += 60.0 * W * hit       # covering a person is never acceptable
+        target_hit = protected_hit(r)
+        if target_hit > 0.0:
+            cost += 60.0 * W * target_hit  # keep the illustrated learning target visible
         cost += min(1.0, busy_level(r) / BUSY_REF) * BUSY_WEIGHT * W   # prefer calm ground
         cost += body_zone_cost(r) * 0.6    # a slightly longer arrow beats a card on a chest
         a = item["anchor_px"]
@@ -517,7 +568,7 @@ def compose_card(card, cfg, out_report):
             ranked.append((cost, cnd["name"], round(busy_level(r), 1), cnd["kind"]))
             if best_any is None or cost < best_any[0]:
                 best_any = (cost, cnd, r)
-            if subject_hit(r) <= 0.02 and (best_ok is None or cost < best_ok[0]):
+            if subject_hit(r) <= 0.02 and protected_hit(r) <= 0.02 and (best_ok is None or cost < best_ok[0]):
                 best_ok = (cost, cnd, r)
         if DEBUG:
             ranked.sort()
@@ -556,7 +607,8 @@ def compose_card(card, cfg, out_report):
                 cross_cost(item, item["rect"], others)
             cost, cnd, r = choose(item, others)
             better = cost < cur - 1
-            repair = subject_hit(item["rect"]) > 0.02 and subject_hit(r) <= 0.02
+            repair = (subject_hit(item["rect"]) > 0.02 and subject_hit(r) <= 0.02) or \
+                     (protected_hit(item["rect"]) > 0.02 and protected_hit(r) <= 0.02)
             if better or repair:
                 item["cand"], item["rect"] = cnd, r
                 changed = True
@@ -588,7 +640,7 @@ def compose_card(card, cfg, out_report):
                 if not (0 <= r[0] and r[2] <= W and 0 <= r[1] and r[3] <= H):
                     continue
                 clash = sum(overlap(r, p["rect"]) for p in placed if p is not item)
-                if clash or subject_hit(r) > 0.02:
+                if clash or subject_hit(r) > 0.02 or protected_hit(r) > 0.02:
                     continue
                 ep = edge_point(r, item["anchor_px"][0], item["anchor_px"][1])
                 d = math.hypot(item["anchor_px"][0] - ep[0], item["anchor_px"][1] - ep[1])
@@ -607,7 +659,7 @@ def compose_card(card, cfg, out_report):
                 r = box_at(c, item["lb"]["w"], item["lb"]["h"], H, margin)
                 if not (0 <= r[0] and r[2] <= W and 0 <= r[1] and r[3] <= H):
                     continue
-                if subject_hit(r) > 0.02:
+                if subject_hit(r) > 0.02 or protected_hit(r) > 0.02:
                     continue
                 if any(overlap(r, p["rect"]) for p in placed if p is not item):
                     continue
@@ -631,6 +683,9 @@ def compose_card(card, cfg, out_report):
         if subject_hit(item["rect"]) > 0.02:
             warnings.append(f"{item['spec']['term']}: label covers a person "
                             f"({subject_hit(item['rect']):.0%} of the card)")
+        if protected_hit(item["rect"]) > 0.02:
+            warnings.append(f"{item['spec']['term']}: label covers a protected learning target "
+                            f"({protected_hit(item['rect']):.0%} of the card)")
 
     # ---- draw
     overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -707,6 +762,7 @@ def compose_card(card, cfg, out_report):
             "slot": i["cand"]["name"],
             "rect": [round(v) for v in i["rect"]],
             "subject_overlap": round(subject_hit(i["rect"]), 3),
+            "protected_overlap": round(protected_hit(i["rect"]), 3),
             "connector_policy": i["spec"].get("connector_policy"),
             "connector_kind": (i["connector"] or {}).get("kind"),
             "connector_px": round((i["connector"] or {}).get("length", 0)),

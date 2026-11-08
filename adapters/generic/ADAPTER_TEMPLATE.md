@@ -17,9 +17,12 @@ capabilities:
 
 ## Required behavior
 - Respect all Stage 01–11 stage contracts.
+- Load exactly one locale-matched `languages/<locale>/profile.json` for a multilingual run.
+- Declare whether the runtime can shape the profile's script and whether its deterministic fonts cover every required glyph.
 - Return explicit errors; never silently skip hard gates.
 - Attach the band-matched `assets/grade_style_references/<band>_art.png` to every Stage 07 image-generation request; record path, SHA-256 and actual per-card attachment status.
 - If the platform cannot accept a reference image, stop with `STYLE_REFERENCE_UNAVAILABLE`; never substitute style prose.
+- If required script shaping or glyph coverage is unavailable, stop before approval with `TEXT_SHAPING_UNAVAILABLE` or `FONT_GLYPH_MISSING`.
 - Use `connector.v3.light`.
 - Never mark a generated-text mockup `APPROVED`.
 

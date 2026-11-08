@@ -17,6 +17,21 @@
     },
     "safe_margin_px": {"type": ["number","null"],"minimum": 0},
     "illustration_focus_zone": {"type": ["object","null"]},
+    "protected_regions": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "description": "Normalized [x_min, y_min, x_max, y_max] rectangle kept clear of opaque label panels; connector endpoints may land inside it.",
+        "prefixItems": [
+          {"type": "number", "minimum": 0, "maximum": 1},
+          {"type": "number", "minimum": 0, "maximum": 1},
+          {"type": "number", "minimum": 0, "maximum": 1},
+          {"type": "number", "minimum": 0, "maximum": 1}
+        ],
+        "minItems": 4,
+        "maxItems": 4
+      }
+    },
     "labels": {
       "type": "array","minItems": 1,
       "items": {

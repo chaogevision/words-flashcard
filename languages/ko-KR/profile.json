@@ -1,0 +1,24 @@
+{
+  "language": "ko",
+  "locale": "ko-KR",
+  "display_name": "Korean",
+  "supported_regions": ["ko-KR", "ko-KP"],
+  "writing_system": {
+    "scripts": ["Hang"],
+    "direction": "ltr",
+    "unicode_blocks": ["Hangul Jamo", "Hangul Syllables"],
+    "shaping": "basic"
+  },
+  "normalization": "NFC",
+  "term_wrap": "graphemes",
+  "reading": {
+    "display": "optional",
+    "default_system": "IPA",
+    "romanization_default": false,
+    "notes": ["Preserve source-provided pronunciation; do not generate ad-hoc Latin romanization."]
+  },
+  "gloss": {"default_language": "zh-CN", "display": "required"},
+  "morphology": ["spacing", "particles", "endings", "batchim_and_sound_changes", "honorifics"],
+  "display_rules": ["Preserve source spacing and precomposed Hangul syllable blocks.", "Do not detach particles or endings from a source form."],
+  "status": "preview"
+}
